@@ -26,6 +26,13 @@ const instructions = Platform.select({
 });
 
 const AppNavigator = createStackNavigator({
+  Home: {
+    screen: Home,
+    navigationOptions: {
+      header: null,
+      headerBackTitle: null
+    }
+  },
   Login: {
     screen: Login,
     navigationOptions: {
@@ -36,13 +43,6 @@ const AppNavigator = createStackNavigator({
     screen: Register,
     navigationOptions: {
       header: null
-    }
-  },
-  Home: {
-    screen: Home,
-    navigationOptions: {
-      header: null,
-      headerBackTitle: null
     }
   },
   Setting: {

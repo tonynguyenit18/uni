@@ -20,12 +20,9 @@ const screenHeight = Dimensions.get("window").height;
 
 class Login extends Component {
   /*--- Lifecycle Methods Region ---*/
-  componentWillMount() {
-    this.checkLogInStatus();
-  }
-
   componentDidUpdate(prevProp) {
     if (prevProp.userInfo != this.props.userInfo && this.props.userInfo) {
+      console.log("login update");
       this.storeUserInfoToRealm(this.props.userInfo);
     }
   }
@@ -64,27 +61,9 @@ class Login extends Component {
         });
       }
     });
-
-    this.checkLogInStatus();
+    this.props.navigation.navigate("Home");
   };
 
-  checkLogInStatus = () => {
-    Realm.open({ schema: [User] }).then(realm => {
-      const user = realm.objects("User")[0];
-      const isLoggedIn = user ? user.isLoggedIn : false;
-      if (isLoggedIn) {
-        this.props.navigation.navigate(
-          "Home",
-          {},
-          {
-            transitionSpec: {
-              duration: 0 // Set the animation duration time as 0 !!
-            }
-          }
-        );
-      }
-    });
-  };
   /*End util functions */
 
   render() {

@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import moment from "moment";
+import { StackActions, NavigationActions } from "react-navigation";
 
 import FormField from "../SharedComponents/FormField";
 import CustomButton from "../SharedComponents/CustomButton";
@@ -160,7 +161,7 @@ class Setting extends Component {
           realm.delete(allUser);
           this.props.clearState();
           if (this.props.navigation) {
-            this.props.navigation.popToTop();
+            this.props.navigation.dispatch(resetAction);
           }
         });
       })
@@ -355,6 +356,11 @@ class Setting extends Component {
     );
   }
 }
+
+const resetAction = StackActions.reset({
+  index: 0,
+  actions: [NavigationActions.navigate({ routeName: "Login" })]
+});
 
 const styles = StyleSheet.create({
   button: {

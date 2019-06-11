@@ -54,6 +54,10 @@ class Home extends Component {
     };
   }
 
+  componentWillMount() {
+    this.checkLogInStatus();
+  }
+
   componentDidMount() {
     Realm.open({ schema: [User] }).then(realm => {
       console.log("REALM PATH ", realm.path);
@@ -63,7 +67,8 @@ class Home extends Component {
   }
 
   componentDidUpdate(prevProp) {
-    if (prevProp.userInfo !== this.props.userInfo) {
+    this.checkLogInStatus();
+    if (this.props.userInfo && prevProp.userInfo != this.props.userInfo) {
       this.storeUserInfoToRealm(this.props.userInfo);
       Realm.open({ schema: [User] }).then(realm => {
         if (realm.objects("User")[0]) {
@@ -142,6 +147,20 @@ class Home extends Component {
   /* ENd eandle events function */
 
   /*---- Util functions ----*/
+  checkLogInStatus = () => {
+    Realm.open({ schema: [User] }).then(realm => {
+      let isLoggedIn = false;
+      let user = null;
+      !realm.objects("User")
+        ? (isLoggedIn = false)
+        : (user = realm.objects("User")[0]);
+      isLoggedIn = user ? user.isLoggedIn : false;
+      if (!isLoggedIn) {
+        this.props.navigation.navigate("Login");
+      }
+    });
+  };
+
   storeUserInfoToRealm = userInfo => {
     let { user, partner } = userInfo;
     user = { rowId: 0, ...user, isLoggedIn: true };
