@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://tony:tony0108@customerbehaviorproject-kkao4.gcp.mongodb.net/test?retryWrites=true",
+  "jwtSecret": "cbp_jwtSecret"
+}
