@@ -9,6 +9,9 @@ export default (styles = StyleSheet.create({
     position: "relative"
   },
   fadedColorLayout: {
+    position: "absolute",
+    top: 0,
+    left: 0,
     width: "100%",
     height: "100%",
     backgroundColor: "#fff",
@@ -95,5 +98,17 @@ export default (styles = StyleSheet.create({
     width: "20%",
     flexDirection: "row",
     marginHorizontal: screenWidth * 0.05
+  },
+  optionsPopup: {
+    position: "absolute",
+    top: "30%",
+    left: "20%",
+    width: "60%",
+    flexDirection: "column",
+    backgroundColor: "#ffffff",
+    borderRadius: 10,
+    alignItems: "center",
+    paddingVertical: 10,
+    zIndex: 2
   }
 }));

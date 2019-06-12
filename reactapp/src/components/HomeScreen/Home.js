@@ -9,6 +9,7 @@ import {
   Button,
   TouchableOpacity
 } from "react-native";
+import ImagePicker from "react-native-image-picker";
 
 import Realm from "realm";
 import User from "../../Realm/Models/User";
@@ -29,6 +30,8 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      userImageSource: null,
+      showOptionsPopup: false,
       user: {
         _id: "",
         username: "",
@@ -144,6 +147,31 @@ class Home extends Component {
     }
   };
 
+  handleProfileImgClick = who => imageName => {
+    this.setState({ showOptionsPopup: true });
+  };
+
+  handleGalleryClick = () => {
+    ImagePicker.launchImageLibrary({}, response => {
+      console.log("gallery reponse", response);
+      const sourceWithData = { uri: "data:image/jpeg;base64," + response.data };
+      this.setState({
+        userImageSource: sourceWithData,
+        showOptionsPopup: false
+      });
+    });
+  };
+
+  handleCameraClick = () => {
+    ImagePicker.launchCamera({}, response => {
+      console.log("camera reponse", response);
+    });
+  };
+
+  handleCancelClick = () => {
+    this.setState({ showOptionsPopup: false });
+  };
+
   /* ENd eandle events function */
 
   /*---- Util functions ----*/
@@ -237,11 +265,13 @@ class Home extends Component {
             />
           </React.Fragment>
         ) : null}
+
         <View
           style={{
             width: "100%",
             height: "100%"
           }}
+          pointerEvents={this.state.showOptionsPopup ? "none" : "auto"}
         >
           <View>
             {/*--- Header ---*/}
@@ -292,9 +322,11 @@ class Home extends Component {
               <ClickableImage
                 style={{
                   width: 60,
-                  height: 60
+                  height: 60,
+                  borderRadius: 30
                 }}
                 imageName="iconProfileImgDefault"
+                callback={this.handleProfileImgClick("partner")}
               />
 
               <View
@@ -322,9 +354,12 @@ class Home extends Component {
               <ClickableImage
                 style={{
                   width: 60,
-                  height: 60
+                  height: 60,
+                  borderRadius: 30
                 }}
                 imageName="iconProfileImgDefault"
+                callback={this.handleProfileImgClick("user")}
+                source={this.state.userImageSource}
               />
             </View>
             {/*--- End Profile Image ---*/}
@@ -379,6 +414,46 @@ class Home extends Component {
           </View>
           {/*---End Action Icons ---*/}
         </View>
+
+        {/*--- 3 Buttons Popup ---*/}
+        {this.state.showOptionsPopup ? (
+          <View style={styles.optionsPopup}>
+            <Text
+              style={{ fontSize: 20, fontWeight: "600", paddingBottom: 20 }}
+            >
+              Open photo
+            </Text>
+            <View
+              style={{
+                width: "100%",
+                borderTopColor: "#ccc",
+                borderTopWidth: 0.5
+              }}
+            >
+              <Button title="Gallary" onPress={this.handleGalleryClick} />
+            </View>
+            <View
+              style={{
+                width: "100%",
+                borderTopColor: "#ccc",
+                borderTopWidth: 0.5
+              }}
+            >
+              <Button title="Camera" onPress={this.handleCameraClick} />
+            </View>
+            <View
+              style={{
+                width: "100%",
+                borderTopColor: "#ccc",
+                borderTopWidth: 0.5
+              }}
+            >
+              <Button title="Cancel" onPress={this.handleCancelClick} />
+            </View>
+          </View>
+        ) : null}
+
+        {/*--- End 3 Buttons Popup ---*/}
       </ImageBackground>
     );
   }

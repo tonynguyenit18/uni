@@ -11,7 +11,7 @@ import {
   iconGalleryPink
 } from "../../images";
 
-const source = {
+const sources = {
   iconCalender,
   iconGallery,
   iconPhone,
@@ -29,10 +29,10 @@ class ClickableImage extends Component {
   };
 
   render() {
-    const { imageName, style, callback } = this.props;
+    const { imageName, style, source } = this.props;
     return (
       <TouchableOpacity onPress={this.handleImageClick}>
-        <Image style={style} source={source[imageName]} />
+        <Image style={style} source={source ? source : sources[imageName]} />
       </TouchableOpacity>
     );
   }
