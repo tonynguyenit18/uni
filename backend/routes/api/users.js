@@ -130,7 +130,7 @@ router.get("/", authMiddleware, (req, res) => {
             .then(partner => {
               if (partner) {
                 const reponsePartner = {
-                  id: partner._id,
+                  _id: partner._id,
                   username: partner.username,
                   coupleID: partner.coupleID
                 };

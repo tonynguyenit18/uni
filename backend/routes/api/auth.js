@@ -54,7 +54,7 @@ function validatePass(res, password, user) {
               console.log("Find partner when login", partner);
               if (partner) {
                 const reponsePartner = {
-                  id: partner._id,
+                  _id: partner._id,
                   username: partner.username,
                   coupleID: partner.coupleID
                 };

@@ -107,6 +107,11 @@ class Setting extends Component {
       case "iconLogout":
         this.logout();
         break;
+      case "iconGalleryPink":
+        this.backToHomeWithImageName(iconName);
+        break;
+      default:
+        console.log("Image name", iconName);
     }
   };
 
@@ -119,7 +124,7 @@ class Setting extends Component {
     });
   };
 
-  handleBtnClick = () => {
+  handleSaveBtnClick = () => {
     const { nickname, partnerNickname, phoneNo, firstDate } = this.state.user;
     const body = { nickname, partnerNickname, phoneNo, firstDate };
     this.props.updateUserInfo(this.state.user.token, body);
@@ -166,6 +171,12 @@ class Setting extends Component {
         });
       })
       .catch(err => console.log("Realm Error in Setting: ", err));
+  };
+
+  backToHomeWithImageName = iconName => {
+    if (this.props.navigation) {
+      this.props.navigation.navigate("Home", { iconName: iconName });
+    }
   };
 
   showSuccesAlert = () => {
@@ -263,7 +274,7 @@ class Setting extends Component {
           style={styles.button}
           titleStyle={styles.title}
           title="Save"
-          btnClickCalback={this.handleBtnClick}
+          btnClickCalback={this.handleSaveBtnClick}
         />
         <View
           style={{
@@ -278,8 +289,14 @@ class Setting extends Component {
             <ClickableImage
               style={styles.imageButton}
               imageName="iconGalleryPink"
+              callback={this.handleImageBtnClick}
             />
-            <Text style={styles.imageButtonTitle}>Set bacground</Text>
+            <Text
+              style={styles.imageButtonTitle}
+              onPress={() => this.handleImageBtnClick("iconGalleryPink")}
+            >
+              Set bacground
+            </Text>
           </View>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Text
