@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, TextInput } from "react-native";
+
 import ClickableImage from "../SharedComponents/AsyncClickableImage";
-import { ListItem, List } from "react-native-elements";
+import TextWithBackground from "../SharedComponents/TextWithBackground";
 
 import styles from "./styles";
 
@@ -20,36 +21,83 @@ export default class Chat extends Component {
     headerRight: (
       <View>
         <ClickableImage
-          style={{
-            width: 20,
-            height: 20,
-            marginTop: -5,
-            marginRight: 15
-          }}
+          style={{ width: 20, height: 20, marginTop: -5, marginRight: 15 }}
           imageName="iconPhonePink"
         />
       </View>
     )
   };
 
+  /*--- Lifecycle Methods region ---*/
+  constructor(props) {
+    super(props);
+    this.state = {
+      arr: [
+        {
+          _id: "0",
+          title:
+            "this is a dummy text to test how the box presenting with a long text, this is a dummy text to test how the box presenting with a long text"
+        },
+        { _id: "1", title: "b" },
+        { _id: "1", title: "c" },
+        { _id: "0", title: "d" },
+        { _id: "1", title: "e" },
+        { _id: "0", title: "f" },
+        { _id: "0", title: "a" },
+        { _id: "1", title: "b" },
+        { _id: "1", title: "c" },
+        { _id: "0", title: "d" },
+        { _id: "1", title: "e" },
+        { _id: "0", title: "f" },
+        { _id: "0", title: "a" },
+        { _id: "1", title: "b" },
+        { _id: "1", title: "c" },
+        { _id: "0", title: "d" },
+        { _id: "1", title: "e" },
+        { _id: "0", title: "f" }
+      ]
+    };
+  }
+
+  /*--- End Lifecycle Methods region ---*/
+
+  /*--- Util methos region ---*/
+  renderMessageItem = ({ item }) => (
+    <View
+      style={
+        item._id === "0"
+          ? styles.userMessageContainer
+          : styles.partnerMessageContainer
+      }
+    >
+      <TextWithBackground
+        style={item._id === "0" ? styles.userMessage : styles.partnerMessage}
+        bgStyle={
+          item._id === "0" ? styles.userMessageBg : styles.partnerMessageBg
+        }
+        content={item.title + " "}
+      />
+    </View>
+  );
+
+  /*--- End Util methos region ---*/
+
   render() {
-    const arr = [
-      { title: "a" },
-      { title: "b" },
-      { title: "c" },
-      { title: "d" },
-      { title: "e" },
-      { title: "f" }
-    ];
     return (
-      <View>
-        <FlatList
-          data={arr}
-          title="chat"
-          renderItem={({ item }) => (
-            <Text style={{ color: "#ff00ac" }}>{item.title}</Text>
-          )}
-        />
+      <View style={styles.screenContainer}>
+        <FlatList data={this.state.arr} renderItem={this.renderMessageItem} />
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.messageInput}
+            placeholder="Type here"
+            multiline={true}
+            autoCapitalize="sentences"
+          />
+          <ClickableImage
+            style={{ width: 30, height: 30 }}
+            imageName="iconSend"
+          />
+        </View>
       </View>
     );
   }
