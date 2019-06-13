@@ -13,6 +13,8 @@ export default (UserSchema = {
     nickname: { type: "string", default: "" },
     partnerNickname: { type: "string", default: "" },
     phoneNo: { type: "string", default: "" },
-    firstDate: { type: "string", default: "" }
+    firstDate: { type: "string", default: "" },
+    profileImageUrl: { type: "string", default: "" },
+    backgroundUrl: { type: "string", default: "" }
   }
 });

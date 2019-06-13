@@ -10,14 +10,19 @@ import {
   TouchableOpacity
 } from "react-native";
 import ImagePicker from "react-native-image-picker";
+import { RNS3 } from "react-native-aws3";
+import Toast, { DURATION } from "react-native-easy-toast";
+import { StackActions, NavigationActions } from "react-navigation";
 
 import Realm from "realm";
 import User from "../../Realm/Models/User";
+import { AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY } from "../../config";
 
 import styles from "./styles";
 import CoupleIDModel from "./CoupleIDModel";
 import TextWithBackground from "../SharedComponents/TextWithBackground";
 import ClickableImage from "../SharedComponents/ClickableImage";
+import AsyncClickableImage from "../SharedComponents/AsyncClickableImage";
 
 import {
   createCoupleID,
@@ -26,12 +31,15 @@ import {
 } from "../../reduxActions/userActions";
 class Home extends Component {
   /* Life cycle methods region */
-
   constructor(props) {
     super(props);
     this.state = {
+      uploadImageMessage: "",
       userImageSource: null,
+      partnerImageSource: null,
+      bgImageSource: null,
       showOptionsPopup: false,
+      pickingUserFor: "",
       user: {
         _id: "",
         username: "",
@@ -41,7 +49,8 @@ class Home extends Component {
         nickname: "",
         partnerNickname: "",
         phoneNo: "",
-        firstDate: ""
+        firstDate: "",
+        backgroundUrl: ""
       },
       partner: {
         _id: "",
@@ -52,7 +61,8 @@ class Home extends Component {
         nickname: "",
         partnerNickname: "",
         phoneNo: "",
-        firstDate: ""
+        firstDate: "",
+        backgroundUrl: ""
       }
     };
   }
@@ -62,16 +72,17 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    Realm.open({ schema: [User] }).then(realm => {
-      console.log("REALM PATH ", realm.path);
-      const token = realm.objects("User")[0].token;
-      this.props.getUserInfo(token);
-    });
+    this.getUserInfo();
   }
 
   componentDidUpdate(prevProp) {
     this.checkLogInStatus();
-    if (this.props.userInfo && prevProp.userInfo != this.props.userInfo) {
+
+    if (
+      this.props.userInfo &&
+      this.props.userInfo.user &&
+      prevProp.userInfo != this.props.userInfo
+    ) {
       this.storeUserInfoToRealm(this.props.userInfo);
       Realm.open({ schema: [User] }).then(realm => {
         if (realm.objects("User")[0]) {
@@ -84,7 +95,9 @@ class Home extends Component {
             nickname,
             partnerNickname,
             phoneNo,
-            firstDate
+            firstDate,
+            profileImageUrl,
+            backgroundUrl
           } = realm.objects("User")[0];
           this.state.user = {
             _id,
@@ -95,7 +108,9 @@ class Home extends Component {
             nickname,
             partnerNickname,
             phoneNo,
-            firstDate
+            firstDate,
+            profileImageUrl,
+            backgroundUrl
           };
         }
         if (realm.objects("User")[1]) {
@@ -108,7 +123,8 @@ class Home extends Component {
             nickname,
             partnerNickname,
             phoneNo,
-            firstDate
+            firstDate,
+            profileImageUrl
           } = realm.objects("User")[1];
           this.state.partner = {
             _id,
@@ -119,11 +135,20 @@ class Home extends Component {
             nickname,
             partnerNickname,
             phoneNo,
-            firstDate
+            firstDate,
+            profileImageUrl
           };
         }
         this.setStateToReRender();
       });
+    }
+    if (
+      prevProp.navigation.getParam("iconName", "NO_ICON") !==
+      this.props.navigation.getParam("iconName", "NO_ICON")
+    ) {
+      this.getAndCheckParamsFromOtherScreen(
+        this.props.navigation.getParam("iconName", "NO_ICON")
+      );
     }
   }
 
@@ -144,37 +169,70 @@ class Home extends Component {
         if (this.props.navigation) {
           this.props.navigation.navigate("Setting");
         }
+        break;
+      case "iconChat":
+        this.goToChat();
+        break;
+      default:
+        console.log("Icon Image Clicked: ", iconName);
+        break;
     }
   };
 
   handleProfileImgClick = who => imageName => {
-    this.setState({ showOptionsPopup: true });
+    this.setState({ showOptionsPopup: true, pickingUserFor: who });
   };
 
   handleGalleryClick = () => {
+    this.setState({
+      showOptionsPopup: false
+    });
     ImagePicker.launchImageLibrary({}, response => {
       console.log("gallery reponse", response);
-      const sourceWithData = { uri: "data:image/jpeg;base64," + response.data };
-      this.setState({
-        userImageSource: sourceWithData,
-        showOptionsPopup: false
-      });
+      this.processImagePickerResponse(response);
     });
   };
 
   handleCameraClick = () => {
+    this.setState({
+      showOptionsPopup: false
+    });
     ImagePicker.launchCamera({}, response => {
       console.log("camera reponse", response);
+      this.processImagePickerResponse(response);
     });
   };
 
   handleCancelClick = () => {
+    if (this.props.navigation.getParam("iconName", "NO_ICON") === "RESET") {
+      console.log(this.props.navigation.getParam("iconName", "NO_ICON"));
+      this.props.navigation.navigate("Setting");
+    }
     this.setState({ showOptionsPopup: false });
   };
 
   /* ENd eandle events function */
 
   /*---- Util functions ----*/
+
+  goToChat = () => {
+    if (this.props.navigation) {
+      this.props.navigation.navigate("Chat");
+    }
+  };
+
+  getUserInfo = () => {
+    Realm.open({ schema: [User] }).then(realm => {
+      console.log("REALM PATH ", realm.path);
+      const token = realm.objects("User")[0]
+        ? realm.objects("User")[0].token
+        : "";
+      if (token) {
+        this.props.getUserInfo(token);
+      }
+    });
+  };
+
   checkLogInStatus = () => {
     Realm.open({ schema: [User] }).then(realm => {
       let isLoggedIn = false;
@@ -183,16 +241,41 @@ class Home extends Component {
         ? (isLoggedIn = false)
         : (user = realm.objects("User")[0]);
       isLoggedIn = user ? user.isLoggedIn : false;
-      if (!isLoggedIn) {
-        this.props.navigation.navigate("Login");
+      if (!isLoggedIn && this.props.navigation) {
+        this.props.navigation.dispatch(resetAction);
       }
     });
   };
 
   storeUserInfoToRealm = userInfo => {
     let { user, partner } = userInfo;
-    user = { rowId: 0, ...user, isLoggedIn: true };
-    partner = { rowId: 1, ...partner };
+
+    //create user and partner profile image url of aws s3 based couple ID and ID created when upload images
+    const userProfileImageUrl = user
+      ? `https://ios-uni-app.s3.us-east-2.amazonaws.com/profile-images/${
+          user.coupleID
+        }-${user._id}.png`
+      : "";
+    const partnerProfileImageUrl =
+      user && partner
+        ? `https://ios-uni-app.s3.us-east-2.amazonaws.com/profile-images/${
+            user.coupleID
+          }-${partner._id}.png`
+        : "";
+
+    const userBgImageUrl = user
+      ? `https://ios-uni-app.s3.us-east-2.amazonaws.com/profile-images/${
+          user._id
+        }-background.png`
+      : "";
+    user = {
+      rowId: 0,
+      ...user,
+      isLoggedIn: true,
+      profileImageUrl: userProfileImageUrl,
+      backgroundUrl: userBgImageUrl
+    };
+    partner = { rowId: 1, ...partner, profileImageUrl: partnerProfileImageUrl };
     Realm.open({ schema: [User] }).then(realm => {
       if (realm.objects("User").length == 0) {
         realm.write(() => {
@@ -215,8 +298,7 @@ class Home extends Component {
   };
 
   setStateToReRender = () => {
-    const { user, partner } = this.state;
-    this.setState({ ...user, ...partner });
+    this.setState({ ...this.state });
   };
 
   calCulateDaysFromADay = givenDate => {
@@ -231,7 +313,7 @@ class Home extends Component {
     firstDate.setMonth(monthIndex);
 
     const today = new Date();
-    const days = this.getDaysFrom2Days(firstDate, today);
+    const days = this.getDaysFrom2Days(firstDate, today) + 1;
     return days;
   };
 
@@ -247,13 +329,95 @@ class Home extends Component {
     return days;
   };
 
+  getAndCheckParamsFromOtherScreen = iconName => {
+    if (iconName === "iconGalleryPink") {
+      this.props.navigation.setParams({ iconName: "RESET" });
+      this.setState({ showOptionsPopup: true, pickingUserFor: "background" });
+    }
+  };
+
+  processImagePickerResponse = response => {
+    if (response.didCancel) {
+      this.handleCancelClick();
+    }
+    const sourceWithData = { uri: "data:image/png;base64," + response.data };
+    let file = null;
+    const configs = {
+      keyPrefix: "profile-images/",
+      bucket: "ios-uni-app",
+      region: "us-east-2",
+      accessKey: AWS_ACCESS_KEY_ID,
+      secretKey: AWS_SECRET_ACCESS_KEY,
+      successActionStatus: 201
+    };
+    if (this.state.pickingUserFor === "user") {
+      file = {
+        uri: response.uri,
+        name: `${this.state.user.coupleID}-${this.state.user._id}.png`,
+        type: "image/png"
+      };
+      this.setState({ userImageSource: sourceWithData });
+    }
+    if (this.state.pickingUserFor === "partner") {
+      file = {
+        uri: response.uri,
+        name: `${this.state.partner.coupleID}-${this.state.partner._id}.png`,
+        type: "image/png"
+      };
+      this.setState({ partnerImageSource: sourceWithData });
+    }
+    if (this.state.pickingUserFor === "background") {
+      file = {
+        uri: response.uri,
+        name: `${this.state.user._id}-background.png`,
+        type: "image/png"
+      };
+      this.setState({ bgImageSource: sourceWithData });
+    }
+
+    RNS3.put(file, configs)
+      .then(response => {
+        response.status == 201
+          ? this.setState(
+              {
+                uploadImageMessage: "Changing image successfully!"
+              },
+              () => this.refs.toast.show(this.state.uploadImageMessage, 1000)
+            )
+          : this.setState(
+              {
+                uploadImageMessage: "Changing image unsuccessfully!",
+                userImageSource: null,
+                partnerImageSource: null
+              },
+              () => this.refs.toast.show(this.state.uploadImageMessage, 1000)
+            );
+      })
+      .catch(err => {
+        this.setState(
+          {
+            uploadImageMessage: err.text,
+            userImageSource: null,
+            partnerImageSource: null
+          },
+          () => this.refs.toast.show(this.state.uploadImageMessage, 1000)
+        );
+      });
+  };
+
   /*---- End Util functions ----*/
 
   render() {
     const coupleID = this.state.user;
     return (
       <ImageBackground
-        source={require("../../images/bg-home.png")}
+        source={
+          this.state.bgImageSource
+            ? this.state.bgImageSource
+            : this.state.user.backgroundUrl
+            ? { uri: this.state.user.backgroundUrl }
+            : require("../../images/bg-home.png")
+        }
         style={styles.imageBackground}
       >
         {!coupleID ? (
@@ -319,7 +483,7 @@ class Home extends Component {
                 marginHorizontal: "10%"
               }}
             >
-              <ClickableImage
+              <AsyncClickableImage
                 style={{
                   width: 60,
                   height: 60,
@@ -327,6 +491,15 @@ class Home extends Component {
                 }}
                 imageName="iconProfileImgDefault"
                 callback={this.handleProfileImgClick("partner")}
+                source={
+                  this.state.partnerImageSource
+                    ? this.state.partnerImageSource
+                    : this.state.partner.profileImageUrl
+                    ? {
+                        uri: this.state.partner.profileImageUrl
+                      }
+                    : null
+                }
               />
 
               <View
@@ -351,7 +524,7 @@ class Home extends Component {
                   bgStyle={styles.textInViewBackground}
                 />
               </View>
-              <ClickableImage
+              <AsyncClickableImage
                 style={{
                   width: 60,
                   height: 60,
@@ -359,7 +532,15 @@ class Home extends Component {
                 }}
                 imageName="iconProfileImgDefault"
                 callback={this.handleProfileImgClick("user")}
-                source={this.state.userImageSource}
+                source={
+                  this.state.userImageSource
+                    ? this.state.userImageSource
+                    : this.state.user.profileImageUrl
+                    ? {
+                        uri: this.state.user.profileImageUrl
+                      }
+                    : null
+                }
               />
             </View>
             {/*--- End Profile Image ---*/}
@@ -374,6 +555,7 @@ class Home extends Component {
                   marginHorizontal: "10%"
                 }}
                 imageName="iconGallery"
+                callback={this.handlEventClick}
               />
               <ClickableImage
                 style={{
@@ -382,6 +564,7 @@ class Home extends Component {
                   marginHorizontal: "10%"
                 }}
                 imageName="iconCalender"
+                callback={this.handlEventClick}
               />
               <ClickableImage
                 style={{
@@ -390,6 +573,7 @@ class Home extends Component {
                   marginHorizontal: "10%"
                 }}
                 imageName="iconPhone"
+                callback={this.handlEventClick}
               />
               <ClickableImage
                 style={{
@@ -398,6 +582,7 @@ class Home extends Component {
                   marginHorizontal: "10%"
                 }}
                 imageName="iconChat"
+                callback={this.handlEventClick}
               />
             </View>
             <View style={{ width: 30 }}>
@@ -413,6 +598,8 @@ class Home extends Component {
             </View>
           </View>
           {/*---End Action Icons ---*/}
+
+          <Toast ref="toast" position="bottom" />
         </View>
 
         {/*--- 3 Buttons Popup ---*/}
@@ -460,7 +647,13 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  userInfo: state.userInfo
+  userInfo: state.userInfo,
+  authUserInfo: state.auth.userInfo
+});
+
+const resetAction = StackActions.reset({
+  index: 0,
+  actions: [NavigationActions.navigate({ routeName: "Login" })]
 });
 
 export default connect(

@@ -1,6 +1,7 @@
 export const iconCalender = require("./icon-calender.png");
 export const iconChat = require("./icon-chat.png");
 export const iconPhone = require("./icon-phone.png");
+export const iconPhonePink = require("./icon-phone-pink.png");
 export const iconGallery = require("./icon-gallery.png");
 export const iconSetting = require("./icon-setting.png");
 export const iconProfileImgDefault = require("./icon-image-default.png");
