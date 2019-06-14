@@ -8,18 +8,36 @@ const decodedToken = token => jwt.verify(token, config.get("jwtSecret"));
 var clients = [];
 
 const connect = io => {
-  io.sockets.on("connection", function(socket) {
+  io.on("connection", function(socket) {
     // get data from the connection that client added to
-    const token = socket.manager.handshaken[socket.id].query.token;
+    const token = socket.handshake.query.token;
     const userID = decodedToken(token).id;
-    const coupleID = socket.manager.handshaken[socket.id].query.coupleID;
+    const coupleID = socket.handshake.query.coupleID;
+    let isClietExist = false;
+    clients = clients.map(client => {
+      if (client.userID === userID) {
+        isClietExist = true;
+        return (client = {
+          userID,
+          coupleID,
+          userID,
+          coupleID,
+          socketID: socket.id
+        });
+      }
+      return client;
+    });
+    if (!isClietExist) {
+      clients.push({ userID, coupleID, socketID: socket.id });
+    }
 
-    clients.push({ userID, coupleID, socketID: socket.id });
+    socket.on("connect", () => {
+      console.log("connected", socket.connected);
+    });
 
     socket.on("sendMessage", function(data) {
-      console.log(data);
-      const { coupleID, userID, createAt } = data;
-      const newMsg = { userID, content: data.msgContext, createAt };
+      const { coupleID, userID, createAt, content } = data;
+      const newMsg = { userID, content, createAt };
       CoupleDetails.findOne({ coupleID }).then(couple => {
         if (couple) {
           couple.messages.push(newMsg);
@@ -28,20 +46,14 @@ const connect = io => {
             { messages: couple.messages },
             { new: true }
           ).then(updatedCouple => {
-            console.log("updatedCouple1", updatedCouple);
             if (updatedCouple) {
               const newAddedMesg = updatedCouple.messages.pop();
-              console.log("newAddedMesg", newAddedMesg);
               clients.map(client => {
                 if (client.coupleID === coupleID && client.userID !== userID) {
-                  io.sockets
-                    .socket(client.socketID)
-                    .emit("newMessage", newAddedMesg);
+                  io.to(client.socketID).emit("newMessage", newAddedMesg);
                 }
                 if (client.coupleID === coupleID && client.userID === userID) {
-                  io.sockets
-                    .socket(client.socketID)
-                    .emit("sendSucceed", newAddedMesg);
+                  io.to(client.socketID).emit("sendSucceed", newAddedMesg);
                 }
               });
             }
@@ -52,18 +64,19 @@ const connect = io => {
             messages: [newMsg]
           });
           newCoupleDetails.save().then(updatedCouple => {
-            console.log("updatedCouple2", updatedCouple);
             if (updatedCouple) {
               clients.map(client => {
                 if (client.coupleID === coupleID && client.userID !== userID) {
-                  io.sockets
-                    .socket(client.socketID)
-                    .emit("newMessage", updatedCouple.messages[0]);
+                  io.to(client.socketID).emit(
+                    "newMessage",
+                    updatedCouple.messages[0]
+                  );
                 }
                 if (client.coupleID === coupleID && client.userID === userID) {
-                  io.sockets
-                    .socket(client.socketID)
-                    .emit("sendSucceed", updatedCouple.messages[0]);
+                  io.to(client.socketID).emit(
+                    "sendSucceed",
+                    updatedCouple.messages[0]
+                  );
                 }
               });
             }
@@ -72,8 +85,9 @@ const connect = io => {
       });
     });
 
-    socket.on("closeSocket", () => {
-      clients = clients.filter(client => client.socketID === socket.id);
+    socket.on("disconnect", reason => {
+      console.log("disconnected", socket.disconnected, reason);
+      clients = clients.filter(client => client.socketID !== socket.id);
     });
   });
 };

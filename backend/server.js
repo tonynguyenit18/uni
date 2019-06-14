@@ -7,8 +7,8 @@ const auth = require("./routes/api/auth");
 const connect = require("./routes/api/chat");
 
 const app = express();
-const server = require("http").createServer(app);
-const io = require("socket.io").listen(server);
+const server = require("http").Server(app);
+const io = require("socket.io")(server);
 server.listen(3000, () => console.log("Server listening on port 3000..."));
 connect(io);
 
