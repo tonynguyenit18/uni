@@ -172,10 +172,13 @@ class Home extends Component {
         }
         break;
       case "iconChat":
-        this.goToChat();
+        this.navigateToScreen("Chat");
         break;
       case "iconPhone":
         this.makeAPhoneCall();
+        break;
+      case "iconCalender":
+        this.navigateToScreen("Events");
         break;
       default:
         console.log("Icon Image Clicked: ", iconName);
@@ -219,9 +222,9 @@ class Home extends Component {
   makeAPhoneCall = () => {
     Linking.openURL("tel: 0431462373");
   };
-  goToChat = () => {
+  navigateToScreen = screenName => {
     if (this.props.navigation) {
-      this.props.navigation.navigate("Chat");
+      this.props.navigation.navigate(screenName);
     }
   };
 

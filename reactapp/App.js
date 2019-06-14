@@ -18,6 +18,7 @@ import Register from "./src/components/RegisterScreen/Register";
 import Home from "./src/components/HomeScreen/Home";
 import Setting from "./src/components/SettingScreen/Setting";
 import Chat from "./src/components/ChatScreen/Chat";
+import Events from "./src/components/EventsScreen/Events";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -63,6 +64,12 @@ const AppNavigator = createStackNavigator({
   },
   Chat: {
     screen: Chat
+  },
+  Events: {
+    screen: Events,
+    navigationOptions: {
+      header: null
+    }
   }
 });
 
