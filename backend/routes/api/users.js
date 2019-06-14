@@ -69,7 +69,6 @@ function createUser(res, newUser) {
 // @desc Create and Update User couple Id
 // @access Public
 router.post("/create_couple_id", authMiddleware, (req, res) => {
-  console.log(req.user.id);
   const condition = { _id: req.user.id };
   checkCoupleId().then(coupleID => {
     const newCoupleDetails = new CoupleDetails({
@@ -165,7 +164,6 @@ router.get("/", authMiddleware, (req, res) => {
 // @desc Sync User couple Id
 // @access Public
 router.get("/couple_details", authMiddleware, (req, res) => {
-  console.log("query", req.query);
   const { coupleID } = req.query;
   CoupleDetails.findOne({ coupleID })
     .then(couple => {

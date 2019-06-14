@@ -7,3 +7,4 @@ export const iconSetting = require("./icon-setting.png");
 export const iconProfileImgDefault = require("./icon-image-default.png");
 export const iconLogout = require("./icon-logout.png");
 export const iconGalleryPink = require("./icon-gallery-pink.png");
+export const iconSend = require("./icon-send.png");

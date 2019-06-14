@@ -12,7 +12,7 @@ import {
 import { connect } from "react-redux";
 
 import Realm from "realm";
-import User from "../../Realm/Models/User";
+import Schema from "../../Realm";
 
 import Form from "../SharedComponents/Form";
 import { login } from "../../reduxActions/authActions";
@@ -22,7 +22,6 @@ class Login extends Component {
   /*--- Lifecycle Methods Region ---*/
   componentDidUpdate(prevProp) {
     if (prevProp.userInfo != this.props.userInfo && this.props.userInfo) {
-      console.log("login update");
       this.storeUserInfoToRealm(this.props.userInfo);
     }
   }
@@ -41,7 +40,7 @@ class Login extends Component {
     let { user, partner } = userInfo;
     user = { rowId: 0, ...user, isLoggedIn: true };
     partner = { rowId: 1, ...partner };
-    Realm.open({ schema: [User] }).then(realm => {
+    Realm.open({ schema: Schema }).then(realm => {
       console.log("REALM PATH ", realm.path);
       if (realm.objects("User").length == 0) {
         realm.write(() => {

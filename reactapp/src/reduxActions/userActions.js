@@ -9,6 +9,8 @@ import {
   REQUEST_USERINFO_FAIL,
   REQUEST_UPDATE_INFO_SUCCESS,
   REQUEST_UPDATE_INFO_FAIL,
+  REQUEST_COUPLE_INFO_FAIL,
+  REQUEST_COUPLE_INFO_SUCCESS,
   CLEAR
 } from "../types";
 import axios from "axios";
@@ -44,6 +46,32 @@ export const getUserInfo = token => dispatch => {
         : { msg: "Check your internet connection." };
       dispatch({
         type: REQUEST_USERINFO_FAIL,
+        error: error
+      });
+    });
+};
+
+export const getCoupleInfo = (token, coupleID) => dispatch => {
+  const config = {
+    headers: {
+      "x-auth-token": token
+    }
+  };
+
+  axiosInstance
+    .get(`api/user/couple_details?coupleID=${coupleID}`, config)
+    .then(response =>
+      dispatch({
+        type: REQUEST_COUPLE_INFO_SUCCESS,
+        payload: response.data
+      })
+    )
+    .catch(err => {
+      let error = err.response
+        ? err.response.data
+        : { msg: "Check your internet connection." };
+      dispatch({
+        type: REQUEST_COUPLE_INFO_FAIL,
         error: error
       });
     });

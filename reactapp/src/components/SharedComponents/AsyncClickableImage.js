@@ -9,7 +9,8 @@ import {
   iconChat,
   iconLogout,
   iconGalleryPink,
-  iconPhonePink
+  iconPhonePink,
+  iconSend
 } from "../../images";
 
 const sources = {
@@ -21,9 +22,10 @@ const sources = {
   iconChat,
   iconLogout,
   iconGalleryPink,
-  iconPhonePink
+  iconPhonePink,
+  iconSend
 };
-class ClickableImage extends Component {
+class AsyncClickableImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -67,4 +69,4 @@ class ClickableImage extends Component {
   }
 }
 
-export default ClickableImage;
+export default AsyncClickableImage;
