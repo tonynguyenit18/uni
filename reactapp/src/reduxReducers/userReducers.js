@@ -9,6 +9,8 @@ import {
   REQUEST_USERINFO_FAIL,
   REQUEST_UPDATE_INFO_SUCCESS,
   REQUEST_UPDATE_INFO_FAIL,
+  REQUEST_COUPLE_INFO_FAIL,
+  REQUEST_COUPLE_INFO_SUCCESS,
   CLEAR
 } from "../types";
 
@@ -16,7 +18,8 @@ const initialState = {
   isLoading: false,
   error: null,
   user: null,
-  partner: null
+  partner: null,
+  coupleInfo: null
 };
 
 export default function(state = initialState, action) {
@@ -43,10 +46,16 @@ export default function(state = initialState, action) {
     case REQUEST_SYNC_FAIL:
     case REQUEST_USERINFO_FAIL:
     case REQUEST_UPDATE_INFO_FAIL:
+    case REQUEST_COUPLE_INFO_FAIL:
       return {
         ...state,
         isLoading: false,
         error: action.error
+      };
+    case REQUEST_COUPLE_INFO_SUCCESS:
+      return {
+        ...state,
+        coupleInfo: action.payload
       };
     case CLEAR:
       return {

@@ -1,6 +1,14 @@
-import { booleanLiteral } from "@babel/types";
+const MessageSchema = {
+  name: "Message",
+  properties: {
+    _id: { type: "string", default: "" },
+    userID: { type: "string", default: "" },
+    content: { type: "string", default: "" },
+    createAt: { type: "int" }
+  }
+};
 
-export default (UserSchema = {
+const UserSchema = {
   name: "User",
   primaryKey: "rowId",
   properties: {
@@ -17,4 +25,6 @@ export default (UserSchema = {
     profileImageUrl: { type: "string", default: "" },
     backgroundUrl: { type: "string", default: "" }
   }
-});
+};
+
+export default (Schema = [UserSchema, MessageSchema]);

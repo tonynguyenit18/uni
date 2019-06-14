@@ -18,7 +18,7 @@ import ClickableImage from "../SharedComponents/ClickableImage";
 import { clearState, updateUserInfo } from "../../reduxActions/userActions";
 
 import Realm from "realm";
-import User from "../../Realm/Models/User";
+import Schema from "../../Realm";
 
 class Setting extends Component {
   /*--- Lifecycle Methods Region ---*/
@@ -44,7 +44,7 @@ class Setting extends Component {
   }
 
   componentWillMount() {
-    Realm.open({ schema: [User] }).then(realm => {
+    Realm.open({ schema: Schema }).then(realm => {
       if (realm.objects("User")[0]) {
         const {
           _id,
@@ -159,7 +159,7 @@ class Setting extends Component {
   };
 
   logout = () => {
-    Realm.open({ schema: [User] })
+    Realm.open({ schema: Schema })
       .then(realm => {
         realm.write(() => {
           const allUser = realm.objects("User");

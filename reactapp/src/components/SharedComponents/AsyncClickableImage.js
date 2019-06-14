@@ -25,7 +25,7 @@ const sources = {
   iconPhonePink,
   iconSend
 };
-class ClickableImage extends Component {
+class AsyncClickableImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -69,4 +69,4 @@ class ClickableImage extends Component {
   }
 }
 
-export default ClickableImage;
+export default AsyncClickableImage;

@@ -44,6 +44,7 @@ export default (styles = StyleSheet.create({
     fontSize: 17
   },
   inputContainer: {
+    backgroundColor: "#fff",
     minHeight: 50,
     paddingHorizontal: 5,
     borderColor: "#ff00ac",

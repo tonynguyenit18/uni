@@ -9,7 +9,8 @@ import {
   iconChat,
   iconLogout,
   iconGalleryPink,
-  iconSend
+  iconSend,
+  iconPhonePink
 } from "../../images";
 
 const sources = {
@@ -21,7 +22,8 @@ const sources = {
   iconChat,
   iconLogout,
   iconGalleryPink,
-  iconSend
+  iconSend,
+  iconPhonePink
 };
 class ClickableImage extends Component {
   handleImageClick = () => {

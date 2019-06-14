@@ -6,6 +6,7 @@ import {
   Text,
   Image,
   TextInput,
+  Linking,
   Button,
   TouchableOpacity
 } from "react-native";
@@ -15,7 +16,7 @@ import Toast, { DURATION } from "react-native-easy-toast";
 import { StackActions, NavigationActions } from "react-navigation";
 
 import Realm from "realm";
-import User from "../../Realm/Models/User";
+import Schema from "../../Realm";
 import { AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY } from "../../config";
 
 import styles from "./styles";
@@ -84,7 +85,7 @@ class Home extends Component {
       prevProp.userInfo != this.props.userInfo
     ) {
       this.storeUserInfoToRealm(this.props.userInfo);
-      Realm.open({ schema: [User] }).then(realm => {
+      Realm.open({ schema: Schema }).then(realm => {
         if (realm.objects("User")[0]) {
           const {
             _id,
@@ -173,6 +174,9 @@ class Home extends Component {
       case "iconChat":
         this.goToChat();
         break;
+      case "iconPhone":
+        this.makeAPhoneCall();
+        break;
       default:
         console.log("Icon Image Clicked: ", iconName);
         break;
@@ -188,7 +192,6 @@ class Home extends Component {
       showOptionsPopup: false
     });
     ImagePicker.launchImageLibrary({}, response => {
-      console.log("gallery reponse", response);
       this.processImagePickerResponse(response);
     });
   };
@@ -198,14 +201,12 @@ class Home extends Component {
       showOptionsPopup: false
     });
     ImagePicker.launchCamera({}, response => {
-      console.log("camera reponse", response);
       this.processImagePickerResponse(response);
     });
   };
 
   handleCancelClick = () => {
     if (this.props.navigation.getParam("iconName", "NO_ICON") === "RESET") {
-      console.log(this.props.navigation.getParam("iconName", "NO_ICON"));
       this.props.navigation.navigate("Setting");
     }
     this.setState({ showOptionsPopup: false });
@@ -215,6 +216,9 @@ class Home extends Component {
 
   /*---- Util functions ----*/
 
+  makeAPhoneCall = () => {
+    Linking.openURL("tel: 0431462373");
+  };
   goToChat = () => {
     if (this.props.navigation) {
       this.props.navigation.navigate("Chat");
@@ -222,7 +226,7 @@ class Home extends Component {
   };
 
   getUserInfo = () => {
-    Realm.open({ schema: [User] }).then(realm => {
+    Realm.open({ schema: Schema }).then(realm => {
       console.log("REALM PATH ", realm.path);
       const token = realm.objects("User")[0]
         ? realm.objects("User")[0].token
@@ -234,7 +238,7 @@ class Home extends Component {
   };
 
   checkLogInStatus = () => {
-    Realm.open({ schema: [User] }).then(realm => {
+    Realm.open({ schema: Schema }).then(realm => {
       let isLoggedIn = false;
       let user = null;
       !realm.objects("User")
@@ -276,7 +280,7 @@ class Home extends Component {
       backgroundUrl: userBgImageUrl
     };
     partner = { rowId: 1, ...partner, profileImageUrl: partnerProfileImageUrl };
-    Realm.open({ schema: [User] }).then(realm => {
+    Realm.open({ schema: Schema }).then(realm => {
       if (realm.objects("User").length == 0) {
         realm.write(() => {
           realm.create("User", user);
