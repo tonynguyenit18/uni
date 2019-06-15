@@ -7,12 +7,24 @@ const MessageSchema = new Schema({
   createAt: Number
 });
 
+const MemorySchema = new Schema({
+  memoryName: String,
+  imageUrls: Array
+});
+
+const EventSchema = new Schema({
+  title: String,
+  dateAndTime: String
+});
+
 const CoupleDetailsSchema = new Schema({
   coupleID: {
     type: String,
     required: true
   },
-  messages: [MessageSchema]
+  messages: { type: [MessageSchema], default: [] },
+  memories: { type: [MemorySchema], default: [] },
+  nextEvents: { type: [EventSchema], default: [] }
 });
 
 module.exports = CoupleDetails = mongoose.model(

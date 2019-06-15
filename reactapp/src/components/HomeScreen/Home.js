@@ -11,6 +11,8 @@ import {
   TouchableOpacity
 } from "react-native";
 import ImagePicker from "react-native-image-picker";
+
+import * as Animatable from "react-native-animatable";
 import { RNS3 } from "react-native-aws3";
 import Toast, { DURATION } from "react-native-easy-toast";
 import { StackActions, NavigationActions } from "react-navigation";
@@ -172,10 +174,13 @@ class Home extends Component {
         }
         break;
       case "iconChat":
-        this.goToChat();
+        this.navigateToScreen("Chat");
         break;
       case "iconPhone":
         this.makeAPhoneCall();
+        break;
+      case "iconCalender":
+        this.navigateToScreen("Events");
         break;
       default:
         console.log("Icon Image Clicked: ", iconName);
@@ -192,6 +197,7 @@ class Home extends Component {
       showOptionsPopup: false
     });
     ImagePicker.launchImageLibrary({}, response => {
+      console.log("responmse", response);
       this.processImagePickerResponse(response);
     });
   };
@@ -219,9 +225,9 @@ class Home extends Component {
   makeAPhoneCall = () => {
     Linking.openURL("tel: 0431462373");
   };
-  goToChat = () => {
+  navigateToScreen = screenName => {
     if (this.props.navigation) {
-      this.props.navigation.navigate("Chat");
+      this.props.navigation.navigate(screenName);
     }
   };
 
@@ -550,7 +556,11 @@ class Home extends Component {
             {/*--- End Profile Image ---*/}
           </View>
           {/*--- Action Icons ---*/}
-          <View style={styles.actionIconContainer}>
+          <Animatable.View
+            animation="zoomIn"
+            iterationCount={1}
+            style={styles.actionIconContainer}
+          >
             <View style={styles.leftActionIconContainer}>
               <ClickableImage
                 style={{
@@ -600,7 +610,7 @@ class Home extends Component {
                 callback={this.handlEventClick}
               />
             </View>
-          </View>
+          </Animatable.View>
           {/*---End Action Icons ---*/}
 
           <Toast ref="toast" position="bottom" />
@@ -608,7 +618,12 @@ class Home extends Component {
 
         {/*--- 3 Buttons Popup ---*/}
         {this.state.showOptionsPopup ? (
-          <View style={styles.optionsPopup}>
+          <Animatable.View
+            animation="zoomIn"
+            iterationCount={1}
+            duration={300}
+            style={styles.optionsPopup}
+          >
             <Text
               style={{ fontSize: 20, fontWeight: "600", paddingBottom: 20 }}
             >
@@ -641,7 +656,7 @@ class Home extends Component {
             >
               <Button title="Cancel" onPress={this.handleCancelClick} />
             </View>
-          </View>
+          </Animatable.View>
         ) : null}
 
         {/*--- End 3 Buttons Popup ---*/}

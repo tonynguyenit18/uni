@@ -1,0 +1,1738 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		ED2506AE7DE35D654F61254441EA7155 /* boost-for-react-native */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9E407D2DCCBD67443FE9CAAAB7F9CEB2 /* Build configuration list for PBXAggregateTarget "boost-for-react-native" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = "boost-for-react-native";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		022CA9B5B34EE5E0409B3688DB0A6366 /* Pods-reactapp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8C2DAD85ECAC5CE8EC9BBAE8062BD5 /* Pods-reactapp-dummy.m */; };
+		079F5D5171B13C0926DA7DDC61DF3886 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1140995A2257320E4558D391F4AD299 /* Foundation.framework */; };
+		0E08E035ED107E9FE55F7A461858B04D /* glog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFA52D2CC5AA0489D9BFCE8D8966FB9 /* glog.framework */; };
+		0E13BB4C34D042506ED18BFBFA2A9EE9 /* Format.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01BEB98AD17B1E6ABE2596498D34D1F8 /* Format.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		0EF79D665209B4260EEEF6C0B41079BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1140995A2257320E4558D391F4AD299 /* Foundation.framework */; };
+		10166BCB3A8D78705306A463087484D7 /* Pods-reactapp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0982513E825181A52357F20BC4821E56 /* Pods-reactapp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		113826233B89C7ED2040802361CBA579 /* Pods-reactapp-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 849FC82DE1557D2421761834305A202C /* Pods-reactapp-tvOS-dummy.m */; };
+		11A190F94041F4FB90B084000A7908A6 /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD43752AD7EE95052090692612D97E96 /* String.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		12F76EECDAF2800F94278620B6B498D1 /* glog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C71CEEF51090C98BFE9592CB878EFA4 /* glog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		165856BB069CC81D69B5965007CC0749 /* Pods-reactappTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A163A42413FA48ECFBFA169762FEF6A7 /* Pods-reactappTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17A391BB13476C8CE8E80D089859AC56 /* F14Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2FC3166DDD6DD4E0F540B3B5565C6CE /* F14Table.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		1FEF88A19681B9F158FF5884D6D77FFC /* Pods-reactapp-tvOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A4109EC1372CFD715A86434D51130D /* Pods-reactapp-tvOSTests-dummy.m */; };
+		25A290EC97BC1C3EE3D879A3D6BA4A4B /* signalhandler.cc in Sources */ = {isa = PBXBuildFile; fileRef = EA16DE43A679B239D17607156AE37094 /* signalhandler.cc */; };
+		29C29BEC8C3AA1FFCEEB2C6D9E421513 /* logging.cc in Sources */ = {isa = PBXBuildFile; fileRef = F2BABAB8299943704D1B53E6489BAE30 /* logging.cc */; };
+		2A9CAB86A4CD70C78CC207A037ED6830 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1140995A2257320E4558D391F4AD299 /* Foundation.framework */; };
+		2B90A4AF6E0DD894CFE5DDB9D0FF8829 /* MallocImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE4AB9B07F8A8BF52A97714610F8874A /* MallocImpl.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		32004276E3F2B5E992D6A2644AA69D18 /* fixed-dtoa.cc in Sources */ = {isa = PBXBuildFile; fileRef = 43B9E129D7611132B9E9CF7F59A2092F /* fixed-dtoa.cc */; };
+		321D74AC5A29F7A9F44298A1A81A6DE4 /* fixed-dtoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 4931571F058CDD42592F6CCCDD6451FF /* fixed-dtoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39F4204CD326592440FDC493ED04E4A0 /* Pods-reactappTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B0F0D0B23B929E33D967DE9973335 /* Pods-reactappTests-dummy.m */; };
+		3A9A0033855ADC84AB3995B710E5C1D9 /* stl_logging.h in Headers */ = {isa = PBXBuildFile; fileRef = C3370AF6FD8646EE0C8CA636AF6565AD /* stl_logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B57992A164EC4D6BD7C458D93EB84DC /* strtod.h in Headers */ = {isa = PBXBuildFile; fileRef = 89B6EAED18133AD6FF2CFD47084B9927 /* strtod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DD1220136E239C6FE9F0BE4F92D59FA /* json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1701C42C4BF1C564355DD149B8AA7BBD /* json.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		3F41B7630B25A60D076CB2CCE4950634 /* fast-dtoa.cc in Sources */ = {isa = PBXBuildFile; fileRef = 1C00E6755C2A413D6F68398F4173C94D /* fast-dtoa.cc */; };
+		40FC2A6153C983870CBD738DEEF6745A /* logging.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D50B677F21693079A0A0F00CC2BB53 /* logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		415F13117FCC8381D2A5510B3A386A49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3374973541E7C49BE3BA61F6F877F76C /* Foundation.framework */; };
+		4596FFBA5B1CCD6AEA3B020D2DD6FF75 /* Folly-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C72E87E31A5E95E2619D6C605547FB /* Folly-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46204C2981A38D099BBB00BE5E91DBE3 /* raw_logging.cc in Sources */ = {isa = PBXBuildFile; fileRef = EC9D7597EC535944748BF7ECD681B8DF /* raw_logging.cc */; };
+		46E620FAB0A16478668BC2AA952A7C85 /* symbolize.cc in Sources */ = {isa = PBXBuildFile; fileRef = 8B6616B1A12A3CD09A0F7D0D6EF02C3E /* symbolize.cc */; };
+		4759AD3F7AB3AABF33C5CD7E485AD8E6 /* log_severity.h in Headers */ = {isa = PBXBuildFile; fileRef = 694A804F83C5882CBD0B7CDF77E26D98 /* log_severity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49CCFDAD4D8DA86B09665617377AA470 /* fast-dtoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 6762F09D08D470A85745369C5623C7EC /* fast-dtoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4AE5BEB8DE395C6FDEC91C51089AFD22 /* cached-powers.h in Headers */ = {isa = PBXBuildFile; fileRef = D60D6EB3AC684376EA6B739A9262B672 /* cached-powers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		541D0290E0311E546325C16BC0E8B502 /* ScopeGuard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC22B869F178D966783A887D3F1D5C0F /* ScopeGuard.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		59B4EFE86BC2E37179EE06AB10C6EE0C /* Unicode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCCBF3906A9F13F9BFCA6FF9ABD24C3B /* Unicode.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		6308AD342FA8C7DB2441431582AA0002 /* ieee.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EF608FAF98A8987140AAED649F3BC46 /* ieee.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65B10EAC98EDDD1DFD9834047A7A2775 /* bignum-dtoa.cc in Sources */ = {isa = PBXBuildFile; fileRef = BDFBA9A88D14F9C6D59C68C6A47DA8BC /* bignum-dtoa.cc */; };
+		6AE4BB6A253C65DAA7ADA802AF48A4E6 /* raw_logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A09B84322B0D14093F271184F9690BC /* raw_logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75BD75032E2C13F30CE917922EC7DE7E /* DoubleConversion-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FA3B74780B2264DD0F6C7BC1B2B95AD7 /* DoubleConversion-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A7B56DAF9E0131DA55D480BB257CFB6 /* bignum.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A42BDAA34900AAC28E4545C5F0807C /* bignum.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A8014754B7BBA9FE8C3D37C669FA18A /* demangle.cc in Sources */ = {isa = PBXBuildFile; fileRef = DE6E7D100335FE04CB63D5A81183A713 /* demangle.cc */; };
+		7F77E3467C588CBCF677841D0F11B35D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1140995A2257320E4558D391F4AD299 /* Foundation.framework */; };
+		8147A856593D400E2FD9D0C4D9B96051 /* double-conversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 35AC1F790C0B56519A2C94FD8677882A /* double-conversion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8998B24318E24BDCA5B4489E129572CA /* DoubleConversion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D32961DEB1040E7A88CF99D18FCFB5 /* DoubleConversion.framework */; };
+		8C098EB1E55373EEF38034FFC254933C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1140995A2257320E4558D391F4AD299 /* Foundation.framework */; };
+		8DD4BD726C35409BF6C8AD2AF795F571 /* utilities.cc in Sources */ = {isa = PBXBuildFile; fileRef = 5DFD4329945C8C1661C2C9898EF8946E /* utilities.cc */; };
+		8EFAF668A2A192EE3ED4EBA85D870141 /* dynamic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 053900933C2F174238B20535D6360451 /* dynamic.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		91F999717A854CD3C1A687C4C1F9697D /* Demangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2803F98B55736FBA43E0E255728FDBF /* Demangle.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		9CE7D246A1FE7607FD34F51973618D06 /* diy-fp.cc in Sources */ = {isa = PBXBuildFile; fileRef = 92C939CEA853868EA2A77286A8453F6B /* diy-fp.cc */; };
+		A2CFB4DF7A0130E9ED1AC884EE40B9EF /* json_pointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC32E80EA843263915D7805377C2BB43 /* json_pointer.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		A43D6CF03E990C572DA3B5D206B64B45 /* bignum-dtoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 6140E4664D443849938503135D233C89 /* bignum-dtoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A497883CB0ED86ED1A54921BABE26F08 /* SpookyHashV2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7B659A42499D806ED77019CB193E7FD /* SpookyHashV2.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		A50872EE1355A82D3041381B8330C066 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 5E199B20BD5D689B9EA0BECE0FAA3039 /* strtod.cc */; };
+		AA44AD1F90DB0E56D008DB9C01E31C82 /* DoubleConversion-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E340A2B6AFF42F76497D2CB80A4E44 /* DoubleConversion-dummy.m */; };
+		B7ECB5A6712548EE93A14E474EFB55CB /* vlog_is_on.cc in Sources */ = {isa = PBXBuildFile; fileRef = 243DEF13580AF8506C6F3ACB38F9CAE6 /* vlog_is_on.cc */; };
+		B96EEE4EFEDBA5854939D85CB16EE51F /* diy-fp.h in Headers */ = {isa = PBXBuildFile; fileRef = E34333FF25EBA9103C2E0BD551597850 /* diy-fp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BED7B4416789526B96566CAE7BF34588 /* Folly-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C96D1EDBE16E3DA25C012D6198DB52F /* Folly-dummy.m */; };
+		C8A7FCC9D30443888F26E76F3A9BAE31 /* Pods-reactapp-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DFFEA6B04B52F7EE6A7A504C1AAB473 /* Pods-reactapp-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8D7C2FF42F5B395218464D930F5B441 /* vlog_is_on.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C8DED34ABC564A99AF7D0D64383A4E /* vlog_is_on.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C977383E7359B89D844A3214CEE1DDBB /* ColdClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1932E63880089527A53067D51453F25A /* ColdClass.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		D2931639695023AE4200EC6640D9550A /* Assume.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD382D90037D1D5B53275B2AB1043996 /* Assume.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		D4732527E090CFBBCF0989DF2CAE8E25 /* Conv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F90197BD4A7F36A556F916CC9EE57E92 /* Conv.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		D65C779ECCED36C0BA0416F494BF754D /* cached-powers.cc in Sources */ = {isa = PBXBuildFile; fileRef = E3AAB630AF81E388FF4AAFB5994AD523 /* cached-powers.cc */; };
+		DB97F169B94A949EEE6442F9C1F7E5A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1140995A2257320E4558D391F4AD299 /* Foundation.framework */; };
+		E0AB42D78A4468B1149CF4C7781753CA /* bignum.cc in Sources */ = {isa = PBXBuildFile; fileRef = 00708D4623057B8A6D129B3460E335B6 /* bignum.cc */; };
+		E50D7D51C60E3512F1442A43DE808F55 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = D370E941C78099FD20F19BB17E0521C0 /* utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6460BD6D998979E4BE60C1310926BAD /* Demangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 994FFD9A5CE6CEFA848165ABC33993F3 /* Demangle.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		E9849B4DF6BFE09E6E14F535484D0126 /* Pods-reactapp-tvOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7F00E6A443F40FC9EB19FA6031E6CB /* Pods-reactapp-tvOSTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F097552C85FDD68A5EA35FD7CAD4A418 /* glog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C0E9690729554BB864E7765CD4461 /* glog-dummy.m */; };
+		FBFCFEA7716115A0E9CFFF7F68EF3C61 /* double-conversion.cc in Sources */ = {isa = PBXBuildFile; fileRef = 26273CB1FC42E506D6559C11D77FBBC5 /* double-conversion.cc */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02DE86EC46FEBA8FD216C7A9D530A5CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0EFEFB685D97280256C559792236873;
+			remoteInfo = glog;
+		};
+		13A57283AEFA2381D1D236DD21A285CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED2506AE7DE35D654F61254441EA7155;
+			remoteInfo = "boost-for-react-native";
+		};
+		2B29CCD7744E02D7DC1430B5706EAE63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AB2EF542954AB1C999E03BFEF8DE806;
+			remoteInfo = DoubleConversion;
+		};
+		41532F9DD0F0B874B396254CD16CBE03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED2506AE7DE35D654F61254441EA7155;
+			remoteInfo = "boost-for-react-native";
+		};
+		68C1939016F7223C77C197BED3AEB740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0EFEFB685D97280256C559792236873;
+			remoteInfo = glog;
+		};
+		82B9281C86CF0965E156F3C45DD44B1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4F685BE3CAC127BDCE4E0DBBD88D191;
+			remoteInfo = Folly;
+		};
+		A9EC412C6A592DA7DF17C16A0FDAD976 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AB2EF542954AB1C999E03BFEF8DE806;
+			remoteInfo = DoubleConversion;
+		};
+		BC376E44808A067D684EEFDFBB9EF60E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCA4D9748C95E600ED83C3C4AF624B1A;
+			remoteInfo = "Pods-reactapp";
+		};
+		E6A8C6DCC58EE3D9052F01B585114780 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCA4D9748C95E600ED83C3C4AF624B1A;
+			remoteInfo = "Pods-reactapp";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00708D4623057B8A6D129B3460E335B6 /* bignum.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = bignum.cc; path = "double-conversion/bignum.cc"; sourceTree = "<group>"; };
+		01BEB98AD17B1E6ABE2596498D34D1F8 /* Format.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = Format.cpp; path = folly/Format.cpp; sourceTree = "<group>"; };
+		02B37D8DE3B9ECA6C169EB997568F8C5 /* glog-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "glog-prefix.pch"; sourceTree = "<group>"; };
+		03419317970359B85C1AA98992A9907F /* Pods-reactapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-reactapp.debug.xcconfig"; sourceTree = "<group>"; };
+		053900933C2F174238B20535D6360451 /* dynamic.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = dynamic.cpp; path = folly/dynamic.cpp; sourceTree = "<group>"; };
+		07F5BF567A5C19B2A3655DF276EB5F3C /* Pods-reactapp-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-reactapp-tvOS.modulemap"; sourceTree = "<group>"; };
+		0982513E825181A52357F20BC4821E56 /* Pods-reactapp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-reactapp-umbrella.h"; sourceTree = "<group>"; };
+		09BB648C7DA4AC57C98734C42E1A99B0 /* Pods_reactappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_reactappTests.framework; path = "Pods-reactappTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FFA52D2CC5AA0489D9BFCE8D8966FB9 /* glog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = glog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		117227230D25D34CE60174E62DA22BB7 /* Pods-reactapp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-reactapp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		11AE335C2CA0E9C2B4AA0E6D0D3FD683 /* Pods-reactapp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-reactapp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		1445DCD79E8B91C5A0D0FB8CDBAE79F8 /* glog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = glog.framework; path = glog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1701C42C4BF1C564355DD149B8AA7BBD /* json.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = json.cpp; path = folly/json.cpp; sourceTree = "<group>"; };
+		17FDF682E560070B45BF60ABE101F57F /* Pods_reactapp_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_reactapp_tvOSTests.framework; path = "Pods-reactapp-tvOSTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1932E63880089527A53067D51453F25A /* ColdClass.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ColdClass.cpp; path = folly/lang/ColdClass.cpp; sourceTree = "<group>"; };
+		1A6D15CECBDB1B97993F8084BE918D35 /* Pods-reactapp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-reactapp-frameworks.sh"; sourceTree = "<group>"; };
+		1C00E6755C2A413D6F68398F4173C94D /* fast-dtoa.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = "fast-dtoa.cc"; path = "double-conversion/fast-dtoa.cc"; sourceTree = "<group>"; };
+		243DEF13580AF8506C6F3ACB38F9CAE6 /* vlog_is_on.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = vlog_is_on.cc; path = src/vlog_is_on.cc; sourceTree = "<group>"; };
+		2567FAC11A49380B4202A9984276366C /* DoubleConversion.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DoubleConversion.xcconfig; sourceTree = "<group>"; };
+		26273CB1FC42E506D6559C11D77FBBC5 /* double-conversion.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = "double-conversion.cc"; path = "double-conversion/double-conversion.cc"; sourceTree = "<group>"; };
+		2EBC3359D6E1BD65F11D5787A3F6C520 /* Pods_reactapp_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_reactapp_tvOS.framework; path = "Pods-reactapp-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F2FFD7DF39567AAF114F9095030B0FC /* folly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = folly.framework; path = Folly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F3CB6D615BDD5481E7ABEA2683C73E3 /* Pods-reactappTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-reactappTests.modulemap"; sourceTree = "<group>"; };
+		3374973541E7C49BE3BA61F6F877F76C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		343EDD54B2DA9735FA6F2B2E402D388B /* Folly-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Folly-Info.plist"; sourceTree = "<group>"; };
+		35AC1F790C0B56519A2C94FD8677882A /* double-conversion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "double-conversion.h"; path = "double-conversion/double-conversion.h"; sourceTree = "<group>"; };
+		3C96D1EDBE16E3DA25C012D6198DB52F /* Folly-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Folly-dummy.m"; sourceTree = "<group>"; };
+		425E5677E9EC6F0D4A77788CDA9BECA2 /* DoubleConversion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DoubleConversion.framework; path = DoubleConversion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43B9E129D7611132B9E9CF7F59A2092F /* fixed-dtoa.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = "fixed-dtoa.cc"; path = "double-conversion/fixed-dtoa.cc"; sourceTree = "<group>"; };
+		48368DB9F3983568119AC6DE1828E2B4 /* Pods-reactapp-tvOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-reactapp-tvOS-Info.plist"; sourceTree = "<group>"; };
+		4931571F058CDD42592F6CCCDD6451FF /* fixed-dtoa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "fixed-dtoa.h"; path = "double-conversion/fixed-dtoa.h"; sourceTree = "<group>"; };
+		4A5B0F0D0B23B929E33D967DE9973335 /* Pods-reactappTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-reactappTests-dummy.m"; sourceTree = "<group>"; };
+		4E72ACBF968678F7AA31EFE7FAADA3B7 /* Pods-reactappTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-reactappTests-Info.plist"; sourceTree = "<group>"; };
+		5330795444EB6FB02C562F53E51377F9 /* Pods-reactapp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-reactapp-Info.plist"; sourceTree = "<group>"; };
+		56E340A2B6AFF42F76497D2CB80A4E44 /* DoubleConversion-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DoubleConversion-dummy.m"; sourceTree = "<group>"; };
+		588D2DDA1D4ED3BE9724915C7D19BC82 /* Pods-reactapp-tvOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-reactapp-tvOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5B7C54BA19794576B160F776919BB0DE /* Pods-reactapp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-reactapp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5DFD4329945C8C1661C2C9898EF8946E /* utilities.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = utilities.cc; path = src/utilities.cc; sourceTree = "<group>"; };
+		5DFFEA6B04B52F7EE6A7A504C1AAB473 /* Pods-reactapp-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-reactapp-tvOS-umbrella.h"; sourceTree = "<group>"; };
+		5E199B20BD5D689B9EA0BECE0FAA3039 /* strtod.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = strtod.cc; path = "double-conversion/strtod.cc"; sourceTree = "<group>"; };
+		6140E4664D443849938503135D233C89 /* bignum-dtoa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "bignum-dtoa.h"; path = "double-conversion/bignum-dtoa.h"; sourceTree = "<group>"; };
+		6762F09D08D470A85745369C5623C7EC /* fast-dtoa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "fast-dtoa.h"; path = "double-conversion/fast-dtoa.h"; sourceTree = "<group>"; };
+		694A804F83C5882CBD0B7CDF77E26D98 /* log_severity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = log_severity.h; path = src/glog/log_severity.h; sourceTree = "<group>"; };
+		6FAD5615DF474157B23D7992A21BD328 /* Pods_reactapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_reactapp.framework; path = "Pods-reactapp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70E64C24A0F35B33005F69B9799AE655 /* glog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = glog.xcconfig; sourceTree = "<group>"; };
+		71A4109EC1372CFD715A86434D51130D /* Pods-reactapp-tvOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-reactapp-tvOSTests-dummy.m"; sourceTree = "<group>"; };
+		7C71CEEF51090C98BFE9592CB878EFA4 /* glog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "glog-umbrella.h"; sourceTree = "<group>"; };
+		7C7F00E6A443F40FC9EB19FA6031E6CB /* Pods-reactapp-tvOSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-reactapp-tvOSTests-umbrella.h"; sourceTree = "<group>"; };
+		7F60BB03783B4E0E00585660A0EA5FB6 /* Folly.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Folly.modulemap; sourceTree = "<group>"; };
+		800CA85028D8049E78CDA8AC11A92130 /* Pods-reactapp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-reactapp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		81ED490951923BFC8E22A8A869886C21 /* Pods-reactappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-reactappTests.release.xcconfig"; sourceTree = "<group>"; };
+		82F590E7D273A0BEBB57C1187F85C63E /* Pods-reactappTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-reactappTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		849FC82DE1557D2421761834305A202C /* Pods-reactapp-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-reactapp-tvOS-dummy.m"; sourceTree = "<group>"; };
+		84C8DED34ABC564A99AF7D0D64383A4E /* vlog_is_on.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = vlog_is_on.h; path = src/glog/vlog_is_on.h; sourceTree = "<group>"; };
+		89B6EAED18133AD6FF2CFD47084B9927 /* strtod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = strtod.h; path = "double-conversion/strtod.h"; sourceTree = "<group>"; };
+		8B6616B1A12A3CD09A0F7D0D6EF02C3E /* symbolize.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = symbolize.cc; path = src/symbolize.cc; sourceTree = "<group>"; };
+		8C602A215A81DBAD7080BB1942B8BE0C /* Folly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Folly.xcconfig; sourceTree = "<group>"; };
+		8CF6403F549D426CD89B1F4257C16B55 /* Pods-reactapp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-reactapp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		8EF608FAF98A8987140AAED649F3BC46 /* ieee.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ieee.h; path = "double-conversion/ieee.h"; sourceTree = "<group>"; };
+		92C939CEA853868EA2A77286A8453F6B /* diy-fp.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = "diy-fp.cc"; path = "double-conversion/diy-fp.cc"; sourceTree = "<group>"; };
+		994FFD9A5CE6CEFA848165ABC33993F3 /* Demangle.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = Demangle.cpp; path = folly/Demangle.cpp; sourceTree = "<group>"; };
+		99CC0D721DD29BA644D8F6C3FD37A344 /* Pods-reactapp-tvOSTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-reactapp-tvOSTests-Info.plist"; sourceTree = "<group>"; };
+		9A09B84322B0D14093F271184F9690BC /* raw_logging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = raw_logging.h; path = src/glog/raw_logging.h; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A163A42413FA48ECFBFA169762FEF6A7 /* Pods-reactappTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-reactappTests-umbrella.h"; sourceTree = "<group>"; };
+		A296E260EA11E5658B0F428F8B354D13 /* Pods-reactapp-tvOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-reactapp-tvOSTests.modulemap"; sourceTree = "<group>"; };
+		A7B659A42499D806ED77019CB193E7FD /* SpookyHashV2.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = SpookyHashV2.cpp; path = folly/hash/SpookyHashV2.cpp; sourceTree = "<group>"; };
+		AD43752AD7EE95052090692612D97E96 /* String.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = String.cpp; path = folly/String.cpp; sourceTree = "<group>"; };
+		AE4AB9B07F8A8BF52A97714610F8874A /* MallocImpl.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = MallocImpl.cpp; path = folly/memory/detail/MallocImpl.cpp; sourceTree = "<group>"; };
+		B04A1A41A7099CF9EBC41FA41DB07AB3 /* Pods-reactappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-reactappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B1C72E87E31A5E95E2619D6C605547FB /* Folly-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Folly-umbrella.h"; sourceTree = "<group>"; };
+		B24297862A484F08CE62BB3888BF471A /* glog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = glog.modulemap; sourceTree = "<group>"; };
+		B2803F98B55736FBA43E0E255728FDBF /* Demangle.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = Demangle.cpp; path = folly/detail/Demangle.cpp; sourceTree = "<group>"; };
+		B2A42BDAA34900AAC28E4545C5F0807C /* bignum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bignum.h; path = "double-conversion/bignum.h"; sourceTree = "<group>"; };
+		B80DA016341432040C288F32D3B5EC11 /* DoubleConversion-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DoubleConversion-Info.plist"; sourceTree = "<group>"; };
+		BC22B869F178D966783A887D3F1D5C0F /* ScopeGuard.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ScopeGuard.cpp; path = folly/ScopeGuard.cpp; sourceTree = "<group>"; };
+		BD2AFA3ACDE062F44CC850E99382E11A /* Pods-reactapp-tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-reactapp-tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BDFBA9A88D14F9C6D59C68C6A47DA8BC /* bignum-dtoa.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = "bignum-dtoa.cc"; path = "double-conversion/bignum-dtoa.cc"; sourceTree = "<group>"; };
+		C3370AF6FD8646EE0C8CA636AF6565AD /* stl_logging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stl_logging.h; path = src/glog/stl_logging.h; sourceTree = "<group>"; };
+		C59C0E9690729554BB864E7765CD4461 /* glog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "glog-dummy.m"; sourceTree = "<group>"; };
+		C9D32961DEB1040E7A88CF99D18FCFB5 /* DoubleConversion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DoubleConversion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D50B677F21693079A0A0F00CC2BB53 /* logging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = logging.h; path = src/glog/logging.h; sourceTree = "<group>"; };
+		CCCBF3906A9F13F9BFCA6FF9ABD24C3B /* Unicode.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = Unicode.cpp; path = folly/Unicode.cpp; sourceTree = "<group>"; };
+		CCF04D92D212D79E987C9EB751DD4F4C /* DoubleConversion-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DoubleConversion-prefix.pch"; sourceTree = "<group>"; };
+		CFD0AA537601D3D481A2C030BA41E185 /* Pods-reactapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-reactapp.release.xcconfig"; sourceTree = "<group>"; };
+		D075925D98A1551A14938A86813319CE /* Folly-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Folly-prefix.pch"; sourceTree = "<group>"; };
+		D355F15E9269122032ADE64CCC4DB170 /* glog-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "glog-Info.plist"; sourceTree = "<group>"; };
+		D370E941C78099FD20F19BB17E0521C0 /* utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = utils.h; path = "double-conversion/utils.h"; sourceTree = "<group>"; };
+		D60D6EB3AC684376EA6B739A9262B672 /* cached-powers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "cached-powers.h"; path = "double-conversion/cached-powers.h"; sourceTree = "<group>"; };
+		D7187AF3C3E0024F216ECC57CE7DA942 /* Pods-reactappTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-reactappTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D7C3C66530A4C3B42F7548E227E6A2F6 /* Pods-reactapp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-reactapp-acknowledgements.plist"; sourceTree = "<group>"; };
+		DD382D90037D1D5B53275B2AB1043996 /* Assume.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = Assume.cpp; path = folly/lang/Assume.cpp; sourceTree = "<group>"; };
+		DE4B6F28290FFF889D0AA81C729C01B0 /* Pods-reactapp-tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-reactapp-tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		DE6E7D100335FE04CB63D5A81183A713 /* demangle.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = demangle.cc; path = src/demangle.cc; sourceTree = "<group>"; };
+		DEFE9EB544FAA0AFFFFD2492E31484E4 /* DoubleConversion.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DoubleConversion.modulemap; sourceTree = "<group>"; };
+		E0B4A259496E8487A6588D6D715CD001 /* Pods-reactapp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-reactapp.modulemap"; sourceTree = "<group>"; };
+		E34333FF25EBA9103C2E0BD551597850 /* diy-fp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "diy-fp.h"; path = "double-conversion/diy-fp.h"; sourceTree = "<group>"; };
+		E3AAB630AF81E388FF4AAFB5994AD523 /* cached-powers.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = "cached-powers.cc"; path = "double-conversion/cached-powers.cc"; sourceTree = "<group>"; };
+		E989F6316A747D8F1D48607134C17D99 /* boost-for-react-native.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "boost-for-react-native.xcconfig"; sourceTree = "<group>"; };
+		EA16DE43A679B239D17607156AE37094 /* signalhandler.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = signalhandler.cc; path = src/signalhandler.cc; sourceTree = "<group>"; };
+		EB8C2DAD85ECAC5CE8EC9BBAE8062BD5 /* Pods-reactapp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-reactapp-dummy.m"; sourceTree = "<group>"; };
+		EC32E80EA843263915D7805377C2BB43 /* json_pointer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = json_pointer.cpp; path = folly/json_pointer.cpp; sourceTree = "<group>"; };
+		EC9D7597EC535944748BF7ECD681B8DF /* raw_logging.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = raw_logging.cc; path = src/raw_logging.cc; sourceTree = "<group>"; };
+		F1140995A2257320E4558D391F4AD299 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F2BABAB8299943704D1B53E6489BAE30 /* logging.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = logging.cc; path = src/logging.cc; sourceTree = "<group>"; };
+		F2FC3166DDD6DD4E0F540B3B5565C6CE /* F14Table.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = F14Table.cpp; path = folly/container/detail/F14Table.cpp; sourceTree = "<group>"; };
+		F7F6CFCA67383D13427AB0CD9F664162 /* Pods-reactapp-tvOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-reactapp-tvOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F90197BD4A7F36A556F916CC9EE57E92 /* Conv.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = Conv.cpp; path = folly/Conv.cpp; sourceTree = "<group>"; };
+		FA3B74780B2264DD0F6C7BC1B2B95AD7 /* DoubleConversion-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DoubleConversion-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		003C1742610A79824FC7313C325C0895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				415F13117FCC8381D2A5510B3A386A49 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		402D123FB93601910B4FE1E10CF02C6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EF79D665209B4260EEEF6C0B41079BF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A1A473788342CF1CD9280988FC55CC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8998B24318E24BDCA5B4489E129572CA /* DoubleConversion.framework in Frameworks */,
+				7F77E3467C588CBCF677841D0F11B35D /* Foundation.framework in Frameworks */,
+				0E08E035ED107E9FE55F7A461858B04D /* glog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C121F82019CF9FBE44B4D1CDC6B3690D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB97F169B94A949EEE6442F9C1F7E5A6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE5A8619493ECA0B850173D50D8B1826 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				079F5D5171B13C0926DA7DDC61DF3886 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE82A8B13B1DEA1EBA1DC941E93F5AF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C098EB1E55373EEF38034FFC254933C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D0A496FBFB43FA128F241C71BF65DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9CAB86A4CD70C78CC207A037ED6830 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00ABBF1E9FA40699B6999A98409A0ED2 /* glog */ = {
+			isa = PBXGroup;
+			children = (
+				DE6E7D100335FE04CB63D5A81183A713 /* demangle.cc */,
+				694A804F83C5882CBD0B7CDF77E26D98 /* log_severity.h */,
+				F2BABAB8299943704D1B53E6489BAE30 /* logging.cc */,
+				C9D50B677F21693079A0A0F00CC2BB53 /* logging.h */,
+				EC9D7597EC535944748BF7ECD681B8DF /* raw_logging.cc */,
+				9A09B84322B0D14093F271184F9690BC /* raw_logging.h */,
+				EA16DE43A679B239D17607156AE37094 /* signalhandler.cc */,
+				C3370AF6FD8646EE0C8CA636AF6565AD /* stl_logging.h */,
+				8B6616B1A12A3CD09A0F7D0D6EF02C3E /* symbolize.cc */,
+				5DFD4329945C8C1661C2C9898EF8946E /* utilities.cc */,
+				243DEF13580AF8506C6F3ACB38F9CAE6 /* vlog_is_on.cc */,
+				84C8DED34ABC564A99AF7D0D64383A4E /* vlog_is_on.h */,
+				E0E21BEC4655C400E70EEA21E4C3ADB5 /* Support Files */,
+			);
+			name = glog;
+			path = glog;
+			sourceTree = "<group>";
+		};
+		0B5882AEB847AB10DF7A7A3C23ED7DF7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEFE9EB544FAA0AFFFFD2492E31484E4 /* DoubleConversion.modulemap */,
+				2567FAC11A49380B4202A9984276366C /* DoubleConversion.xcconfig */,
+				56E340A2B6AFF42F76497D2CB80A4E44 /* DoubleConversion-dummy.m */,
+				B80DA016341432040C288F32D3B5EC11 /* DoubleConversion-Info.plist */,
+				CCF04D92D212D79E987C9EB751DD4F4C /* DoubleConversion-prefix.pch */,
+				FA3B74780B2264DD0F6C7BC1B2B95AD7 /* DoubleConversion-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DoubleConversion";
+			sourceTree = "<group>";
+		};
+		1ECCBAFACDFE7F62157BDAF46AE7E469 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B614309A078EA749624CF8A7D300709 /* Pods-reactapp */,
+				6DD20B479908D2AF3AC4CE6F06B0653E /* Pods-reactapp-tvOS */,
+				647E74479E7224E5B984837082587BF3 /* Pods-reactapp-tvOSTests */,
+				C3D89FB39E27CD4F9F452DE8EF38F008 /* Pods-reactappTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2191FFBD4B5A7677AF9C49C831AD2632 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DE091FD90417FD2C182CA5ED6BE5D8B /* boost-for-react-native */,
+				B9E6AE218D80BC6BFFD4B10281BD0E23 /* DoubleConversion */,
+				B192903BAD1EE654E2167B333CD6D501 /* Folly */,
+				00ABBF1E9FA40699B6999A98409A0ED2 /* glog */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2D7E58B056F04235DEDACB350F5A76CA /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				3374973541E7C49BE3BA61F6F877F76C /* Foundation.framework */,
+			);
+			name = tvOS;
+			sourceTree = "<group>";
+		};
+		36D4EF1E229B39F6B8C977830E0C0B54 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F60BB03783B4E0E00585660A0EA5FB6 /* Folly.modulemap */,
+				8C602A215A81DBAD7080BB1942B8BE0C /* Folly.xcconfig */,
+				3C96D1EDBE16E3DA25C012D6198DB52F /* Folly-dummy.m */,
+				343EDD54B2DA9735FA6F2B2E402D388B /* Folly-Info.plist */,
+				D075925D98A1551A14938A86813319CE /* Folly-prefix.pch */,
+				B1C72E87E31A5E95E2619D6C605547FB /* Folly-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Folly";
+			sourceTree = "<group>";
+		};
+		4B614309A078EA749624CF8A7D300709 /* Pods-reactapp */ = {
+			isa = PBXGroup;
+			children = (
+				E0B4A259496E8487A6588D6D715CD001 /* Pods-reactapp.modulemap */,
+				5B7C54BA19794576B160F776919BB0DE /* Pods-reactapp-acknowledgements.markdown */,
+				D7C3C66530A4C3B42F7548E227E6A2F6 /* Pods-reactapp-acknowledgements.plist */,
+				EB8C2DAD85ECAC5CE8EC9BBAE8062BD5 /* Pods-reactapp-dummy.m */,
+				1A6D15CECBDB1B97993F8084BE918D35 /* Pods-reactapp-frameworks.sh */,
+				5330795444EB6FB02C562F53E51377F9 /* Pods-reactapp-Info.plist */,
+				0982513E825181A52357F20BC4821E56 /* Pods-reactapp-umbrella.h */,
+				03419317970359B85C1AA98992A9907F /* Pods-reactapp.debug.xcconfig */,
+				CFD0AA537601D3D481A2C030BA41E185 /* Pods-reactapp.release.xcconfig */,
+			);
+			name = "Pods-reactapp";
+			path = "Target Support Files/Pods-reactapp";
+			sourceTree = "<group>";
+		};
+		647E74479E7224E5B984837082587BF3 /* Pods-reactapp-tvOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				A296E260EA11E5658B0F428F8B354D13 /* Pods-reactapp-tvOSTests.modulemap */,
+				588D2DDA1D4ED3BE9724915C7D19BC82 /* Pods-reactapp-tvOSTests-acknowledgements.markdown */,
+				F7F6CFCA67383D13427AB0CD9F664162 /* Pods-reactapp-tvOSTests-acknowledgements.plist */,
+				71A4109EC1372CFD715A86434D51130D /* Pods-reactapp-tvOSTests-dummy.m */,
+				99CC0D721DD29BA644D8F6C3FD37A344 /* Pods-reactapp-tvOSTests-Info.plist */,
+				7C7F00E6A443F40FC9EB19FA6031E6CB /* Pods-reactapp-tvOSTests-umbrella.h */,
+				117227230D25D34CE60174E62DA22BB7 /* Pods-reactapp-tvOSTests.debug.xcconfig */,
+				8CF6403F549D426CD89B1F4257C16B55 /* Pods-reactapp-tvOSTests.release.xcconfig */,
+			);
+			name = "Pods-reactapp-tvOSTests";
+			path = "Target Support Files/Pods-reactapp-tvOSTests";
+			sourceTree = "<group>";
+		};
+		6DD20B479908D2AF3AC4CE6F06B0653E /* Pods-reactapp-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				07F5BF567A5C19B2A3655DF276EB5F3C /* Pods-reactapp-tvOS.modulemap */,
+				BD2AFA3ACDE062F44CC850E99382E11A /* Pods-reactapp-tvOS-acknowledgements.markdown */,
+				DE4B6F28290FFF889D0AA81C729C01B0 /* Pods-reactapp-tvOS-acknowledgements.plist */,
+				849FC82DE1557D2421761834305A202C /* Pods-reactapp-tvOS-dummy.m */,
+				48368DB9F3983568119AC6DE1828E2B4 /* Pods-reactapp-tvOS-Info.plist */,
+				5DFFEA6B04B52F7EE6A7A504C1AAB473 /* Pods-reactapp-tvOS-umbrella.h */,
+				800CA85028D8049E78CDA8AC11A92130 /* Pods-reactapp-tvOS.debug.xcconfig */,
+				11AE335C2CA0E9C2B4AA0E6D0D3FD683 /* Pods-reactapp-tvOS.release.xcconfig */,
+			);
+			name = "Pods-reactapp-tvOS";
+			path = "Target Support Files/Pods-reactapp-tvOS";
+			sourceTree = "<group>";
+		};
+		80141C49AFC0D5A12FEA428A09943360 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9D32961DEB1040E7A88CF99D18FCFB5 /* DoubleConversion.framework */,
+				0FFA52D2CC5AA0489D9BFCE8D8966FB9 /* glog.framework */,
+				EDD4F6A5A035EA5EBC40AEEEC2BF836E /* iOS */,
+				2D7E58B056F04235DEDACB350F5A76CA /* tvOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9DE091FD90417FD2C182CA5ED6BE5D8B /* boost-for-react-native */ = {
+			isa = PBXGroup;
+			children = (
+				EBF60AE8B7F82C3769F1E7447D99AD66 /* Support Files */,
+			);
+			name = "boost-for-react-native";
+			path = "boost-for-react-native";
+			sourceTree = "<group>";
+		};
+		B192903BAD1EE654E2167B333CD6D501 /* Folly */ = {
+			isa = PBXGroup;
+			children = (
+				DD382D90037D1D5B53275B2AB1043996 /* Assume.cpp */,
+				1932E63880089527A53067D51453F25A /* ColdClass.cpp */,
+				F90197BD4A7F36A556F916CC9EE57E92 /* Conv.cpp */,
+				994FFD9A5CE6CEFA848165ABC33993F3 /* Demangle.cpp */,
+				B2803F98B55736FBA43E0E255728FDBF /* Demangle.cpp */,
+				053900933C2F174238B20535D6360451 /* dynamic.cpp */,
+				F2FC3166DDD6DD4E0F540B3B5565C6CE /* F14Table.cpp */,
+				01BEB98AD17B1E6ABE2596498D34D1F8 /* Format.cpp */,
+				1701C42C4BF1C564355DD149B8AA7BBD /* json.cpp */,
+				EC32E80EA843263915D7805377C2BB43 /* json_pointer.cpp */,
+				AE4AB9B07F8A8BF52A97714610F8874A /* MallocImpl.cpp */,
+				BC22B869F178D966783A887D3F1D5C0F /* ScopeGuard.cpp */,
+				A7B659A42499D806ED77019CB193E7FD /* SpookyHashV2.cpp */,
+				AD43752AD7EE95052090692612D97E96 /* String.cpp */,
+				CCCBF3906A9F13F9BFCA6FF9ABD24C3B /* Unicode.cpp */,
+				36D4EF1E229B39F6B8C977830E0C0B54 /* Support Files */,
+			);
+			name = Folly;
+			path = Folly;
+			sourceTree = "<group>";
+		};
+		B7D5F424B6907A03888176898559246C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				425E5677E9EC6F0D4A77788CDA9BECA2 /* DoubleConversion.framework */,
+				2F2FFD7DF39567AAF114F9095030B0FC /* folly.framework */,
+				1445DCD79E8B91C5A0D0FB8CDBAE79F8 /* glog.framework */,
+				6FAD5615DF474157B23D7992A21BD328 /* Pods_reactapp.framework */,
+				2EBC3359D6E1BD65F11D5787A3F6C520 /* Pods_reactapp_tvOS.framework */,
+				17FDF682E560070B45BF60ABE101F57F /* Pods_reactapp_tvOSTests.framework */,
+				09BB648C7DA4AC57C98734C42E1A99B0 /* Pods_reactappTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9E6AE218D80BC6BFFD4B10281BD0E23 /* DoubleConversion */ = {
+			isa = PBXGroup;
+			children = (
+				00708D4623057B8A6D129B3460E335B6 /* bignum.cc */,
+				B2A42BDAA34900AAC28E4545C5F0807C /* bignum.h */,
+				BDFBA9A88D14F9C6D59C68C6A47DA8BC /* bignum-dtoa.cc */,
+				6140E4664D443849938503135D233C89 /* bignum-dtoa.h */,
+				E3AAB630AF81E388FF4AAFB5994AD523 /* cached-powers.cc */,
+				D60D6EB3AC684376EA6B739A9262B672 /* cached-powers.h */,
+				92C939CEA853868EA2A77286A8453F6B /* diy-fp.cc */,
+				E34333FF25EBA9103C2E0BD551597850 /* diy-fp.h */,
+				26273CB1FC42E506D6559C11D77FBBC5 /* double-conversion.cc */,
+				35AC1F790C0B56519A2C94FD8677882A /* double-conversion.h */,
+				1C00E6755C2A413D6F68398F4173C94D /* fast-dtoa.cc */,
+				6762F09D08D470A85745369C5623C7EC /* fast-dtoa.h */,
+				43B9E129D7611132B9E9CF7F59A2092F /* fixed-dtoa.cc */,
+				4931571F058CDD42592F6CCCDD6451FF /* fixed-dtoa.h */,
+				8EF608FAF98A8987140AAED649F3BC46 /* ieee.h */,
+				5E199B20BD5D689B9EA0BECE0FAA3039 /* strtod.cc */,
+				89B6EAED18133AD6FF2CFD47084B9927 /* strtod.h */,
+				D370E941C78099FD20F19BB17E0521C0 /* utils.h */,
+				0B5882AEB847AB10DF7A7A3C23ED7DF7 /* Support Files */,
+			);
+			name = DoubleConversion;
+			path = DoubleConversion;
+			sourceTree = "<group>";
+		};
+		C3D89FB39E27CD4F9F452DE8EF38F008 /* Pods-reactappTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F3CB6D615BDD5481E7ABEA2683C73E3 /* Pods-reactappTests.modulemap */,
+				82F590E7D273A0BEBB57C1187F85C63E /* Pods-reactappTests-acknowledgements.markdown */,
+				D7187AF3C3E0024F216ECC57CE7DA942 /* Pods-reactappTests-acknowledgements.plist */,
+				4A5B0F0D0B23B929E33D967DE9973335 /* Pods-reactappTests-dummy.m */,
+				4E72ACBF968678F7AA31EFE7FAADA3B7 /* Pods-reactappTests-Info.plist */,
+				A163A42413FA48ECFBFA169762FEF6A7 /* Pods-reactappTests-umbrella.h */,
+				B04A1A41A7099CF9EBC41FA41DB07AB3 /* Pods-reactappTests.debug.xcconfig */,
+				81ED490951923BFC8E22A8A869886C21 /* Pods-reactappTests.release.xcconfig */,
+			);
+			name = "Pods-reactappTests";
+			path = "Target Support Files/Pods-reactappTests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				80141C49AFC0D5A12FEA428A09943360 /* Frameworks */,
+				2191FFBD4B5A7677AF9C49C831AD2632 /* Pods */,
+				B7D5F424B6907A03888176898559246C /* Products */,
+				1ECCBAFACDFE7F62157BDAF46AE7E469 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E0E21BEC4655C400E70EEA21E4C3ADB5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B24297862A484F08CE62BB3888BF471A /* glog.modulemap */,
+				70E64C24A0F35B33005F69B9799AE655 /* glog.xcconfig */,
+				C59C0E9690729554BB864E7765CD4461 /* glog-dummy.m */,
+				D355F15E9269122032ADE64CCC4DB170 /* glog-Info.plist */,
+				02B37D8DE3B9ECA6C169EB997568F8C5 /* glog-prefix.pch */,
+				7C71CEEF51090C98BFE9592CB878EFA4 /* glog-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/glog";
+			sourceTree = "<group>";
+		};
+		EBF60AE8B7F82C3769F1E7447D99AD66 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E989F6316A747D8F1D48607134C17D99 /* boost-for-react-native.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/boost-for-react-native";
+			sourceTree = "<group>";
+		};
+		EDD4F6A5A035EA5EBC40AEEEC2BF836E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F1140995A2257320E4558D391F4AD299 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		082E29CDAED51905E12FC9DADC5D7BE7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12F76EECDAF2800F94278620B6B498D1 /* glog-umbrella.h in Headers */,
+				4759AD3F7AB3AABF33C5CD7E485AD8E6 /* log_severity.h in Headers */,
+				40FC2A6153C983870CBD738DEEF6745A /* logging.h in Headers */,
+				6AE4BB6A253C65DAA7ADA802AF48A4E6 /* raw_logging.h in Headers */,
+				3A9A0033855ADC84AB3995B710E5C1D9 /* stl_logging.h in Headers */,
+				C8D7C2FF42F5B395218464D930F5B441 /* vlog_is_on.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EDB7016100AFAFFA5112809CD7E823C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8A7FCC9D30443888F26E76F3A9BAE31 /* Pods-reactapp-tvOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		604C00C8E02CE359B6D64380C0CE131E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				165856BB069CC81D69B5965007CC0749 /* Pods-reactappTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1AB1EA072A9BB2176AA2F75F7BD709 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9849B4DF6BFE09E6E14F535484D0126 /* Pods-reactapp-tvOSTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C13935DAE4FE8E5E2E7FEBB3E66E7F3D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A43D6CF03E990C572DA3B5D206B64B45 /* bignum-dtoa.h in Headers */,
+				7A7B56DAF9E0131DA55D480BB257CFB6 /* bignum.h in Headers */,
+				4AE5BEB8DE395C6FDEC91C51089AFD22 /* cached-powers.h in Headers */,
+				B96EEE4EFEDBA5854939D85CB16EE51F /* diy-fp.h in Headers */,
+				8147A856593D400E2FD9D0C4D9B96051 /* double-conversion.h in Headers */,
+				75BD75032E2C13F30CE917922EC7DE7E /* DoubleConversion-umbrella.h in Headers */,
+				49CCFDAD4D8DA86B09665617377AA470 /* fast-dtoa.h in Headers */,
+				321D74AC5A29F7A9F44298A1A81A6DE4 /* fixed-dtoa.h in Headers */,
+				6308AD342FA8C7DB2441431582AA0002 /* ieee.h in Headers */,
+				3B57992A164EC4D6BD7C458D93EB84DC /* strtod.h in Headers */,
+				E50D7D51C60E3512F1442A43DE808F55 /* utils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D761FCD122D74BD9B13A7763025A6D43 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4596FFBA5B1CCD6AEA3B020D2DD6FF75 /* Folly-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9E4FFD782B61896960DDDCAFE0B2A21 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10166BCB3A8D78705306A463087484D7 /* Pods-reactapp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		06C57ED6E68CE5D9A13279F149324FDB /* Pods-reactappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A47886178CC194E8837ED1F2644630D2 /* Build configuration list for PBXNativeTarget "Pods-reactappTests" */;
+			buildPhases = (
+				604C00C8E02CE359B6D64380C0CE131E /* Headers */,
+				C1F36845AB2137F1A13D2758CC8F9302 /* Sources */,
+				CE82A8B13B1DEA1EBA1DC941E93F5AF9 /* Frameworks */,
+				5C837B9DDC67F16B1338A45D02B83FD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D0710579294D744C72859D6D8CDB1E7 /* PBXTargetDependency */,
+			);
+			name = "Pods-reactappTests";
+			productName = "Pods-reactappTests";
+			productReference = 09BB648C7DA4AC57C98734C42E1A99B0 /* Pods_reactappTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2AB2EF542954AB1C999E03BFEF8DE806 /* DoubleConversion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD7C0E42E3773EB93812FE523DAECE84 /* Build configuration list for PBXNativeTarget "DoubleConversion" */;
+			buildPhases = (
+				C13935DAE4FE8E5E2E7FEBB3E66E7F3D /* Headers */,
+				0233EB31601170F6F0C9F1D26739FA25 /* Sources */,
+				CE5A8619493ECA0B850173D50D8B1826 /* Frameworks */,
+				8468757FFAAA5806A6CF4B2033E00E1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoubleConversion;
+			productName = DoubleConversion;
+			productReference = 425E5677E9EC6F0D4A77788CDA9BECA2 /* DoubleConversion.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		56E5B38E56FAD435AD190DC02C740DB8 /* Pods-reactapp-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD18D67E2E6CA48130DD53403061EF02 /* Build configuration list for PBXNativeTarget "Pods-reactapp-tvOS" */;
+			buildPhases = (
+				2EDB7016100AFAFFA5112809CD7E823C /* Headers */,
+				EC31ABDD8799A2DCCFA6267B0E106284 /* Sources */,
+				003C1742610A79824FC7313C325C0895 /* Frameworks */,
+				C155553070C921D8AC62BFD9B21F9815 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-reactapp-tvOS";
+			productName = "Pods-reactapp-tvOS";
+			productReference = 2EBC3359D6E1BD65F11D5787A3F6C520 /* Pods_reactapp_tvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A4F685BE3CAC127BDCE4E0DBBD88D191 /* Folly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C854CC0718B3EE6C3B5483B54742850E /* Build configuration list for PBXNativeTarget "Folly" */;
+			buildPhases = (
+				D761FCD122D74BD9B13A7763025A6D43 /* Headers */,
+				36D6B5B0E97F31D4E5461E63ECD9AFDF /* Sources */,
+				9A1A473788342CF1CD9280988FC55CC1 /* Frameworks */,
+				3A5A36A11FD9B626A3D8260EEC5F8F96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6B9BF8A605CA42C877098D487CA3694 /* PBXTargetDependency */,
+				0A38DFE0AD824FF9A8FB71C7702B02C3 /* PBXTargetDependency */,
+				D7475080713311B57A2767F9903FC994 /* PBXTargetDependency */,
+			);
+			name = Folly;
+			productName = Folly;
+			productReference = 2F2FFD7DF39567AAF114F9095030B0FC /* folly.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BCA4D9748C95E600ED83C3C4AF624B1A /* Pods-reactapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BDC53870C6816C8C7BE544CEA34504D /* Build configuration list for PBXNativeTarget "Pods-reactapp" */;
+			buildPhases = (
+				E9E4FFD782B61896960DDDCAFE0B2A21 /* Headers */,
+				6811222E7082452ED1D60FD2A5E97196 /* Sources */,
+				C121F82019CF9FBE44B4D1CDC6B3690D /* Frameworks */,
+				3F7C83B410FB8843E87A3C832C6CDE5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D3CE9FE37E6B3AB1BE9329D53AEB537 /* PBXTargetDependency */,
+				A9FDD3A31113BEB43FC3968E795FCB22 /* PBXTargetDependency */,
+				7B5B4064777BB2376A1C9F69FE0BDCA4 /* PBXTargetDependency */,
+				5F1998DD0B7D450A139C74FF5A151630 /* PBXTargetDependency */,
+			);
+			name = "Pods-reactapp";
+			productName = "Pods-reactapp";
+			productReference = 6FAD5615DF474157B23D7992A21BD328 /* Pods_reactapp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D0EFEFB685D97280256C559792236873 /* glog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAEAE8022802FDF571BCBC692A26CD16 /* Build configuration list for PBXNativeTarget "glog" */;
+			buildPhases = (
+				082E29CDAED51905E12FC9DADC5D7BE7 /* Headers */,
+				01C363A31BAAD01F29C12F3FBA83BB2E /* Sources */,
+				402D123FB93601910B4FE1E10CF02C6C /* Frameworks */,
+				039D4DEC41C599EC7B63A78CB65C951B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = glog;
+			productName = glog;
+			productReference = 1445DCD79E8B91C5A0D0FB8CDBAE79F8 /* glog.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FB652B3E8029EE1AB2B2983240A671D2 /* Pods-reactapp-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9248E04DE07732CECAC5FC2654CBC5B6 /* Build configuration list for PBXNativeTarget "Pods-reactapp-tvOSTests" */;
+			buildPhases = (
+				7F1AB1EA072A9BB2176AA2F75F7BD709 /* Headers */,
+				B6D639B6A57AB493EA3EC82827F9103E /* Sources */,
+				E2D0A496FBFB43FA128F241C71BF65DB /* Frameworks */,
+				E9C26F250C852CE651FAE31392F2F553 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C090EB7945734DA08733A286EFD47FDA /* PBXTargetDependency */,
+			);
+			name = "Pods-reactapp-tvOSTests";
+			productName = "Pods-reactapp-tvOSTests";
+			productReference = 17FDF682E560070B45BF60ABE101F57F /* Pods_reactapp_tvOSTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = B7D5F424B6907A03888176898559246C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED2506AE7DE35D654F61254441EA7155 /* boost-for-react-native */,
+				2AB2EF542954AB1C999E03BFEF8DE806 /* DoubleConversion */,
+				A4F685BE3CAC127BDCE4E0DBBD88D191 /* Folly */,
+				D0EFEFB685D97280256C559792236873 /* glog */,
+				BCA4D9748C95E600ED83C3C4AF624B1A /* Pods-reactapp */,
+				56E5B38E56FAD435AD190DC02C740DB8 /* Pods-reactapp-tvOS */,
+				FB652B3E8029EE1AB2B2983240A671D2 /* Pods-reactapp-tvOSTests */,
+				06C57ED6E68CE5D9A13279F149324FDB /* Pods-reactappTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		039D4DEC41C599EC7B63A78CB65C951B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A5A36A11FD9B626A3D8260EEC5F8F96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F7C83B410FB8843E87A3C832C6CDE5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C837B9DDC67F16B1338A45D02B83FD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8468757FFAAA5806A6CF4B2033E00E1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C155553070C921D8AC62BFD9B21F9815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9C26F250C852CE651FAE31392F2F553 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01C363A31BAAD01F29C12F3FBA83BB2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A8014754B7BBA9FE8C3D37C669FA18A /* demangle.cc in Sources */,
+				F097552C85FDD68A5EA35FD7CAD4A418 /* glog-dummy.m in Sources */,
+				29C29BEC8C3AA1FFCEEB2C6D9E421513 /* logging.cc in Sources */,
+				46204C2981A38D099BBB00BE5E91DBE3 /* raw_logging.cc in Sources */,
+				25A290EC97BC1C3EE3D879A3D6BA4A4B /* signalhandler.cc in Sources */,
+				46E620FAB0A16478668BC2AA952A7C85 /* symbolize.cc in Sources */,
+				8DD4BD726C35409BF6C8AD2AF795F571 /* utilities.cc in Sources */,
+				B7ECB5A6712548EE93A14E474EFB55CB /* vlog_is_on.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0233EB31601170F6F0C9F1D26739FA25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65B10EAC98EDDD1DFD9834047A7A2775 /* bignum-dtoa.cc in Sources */,
+				E0AB42D78A4468B1149CF4C7781753CA /* bignum.cc in Sources */,
+				D65C779ECCED36C0BA0416F494BF754D /* cached-powers.cc in Sources */,
+				9CE7D246A1FE7607FD34F51973618D06 /* diy-fp.cc in Sources */,
+				FBFCFEA7716115A0E9CFFF7F68EF3C61 /* double-conversion.cc in Sources */,
+				AA44AD1F90DB0E56D008DB9C01E31C82 /* DoubleConversion-dummy.m in Sources */,
+				3F41B7630B25A60D076CB2CCE4950634 /* fast-dtoa.cc in Sources */,
+				32004276E3F2B5E992D6A2644AA69D18 /* fixed-dtoa.cc in Sources */,
+				A50872EE1355A82D3041381B8330C066 /* strtod.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36D6B5B0E97F31D4E5461E63ECD9AFDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2931639695023AE4200EC6640D9550A /* Assume.cpp in Sources */,
+				C977383E7359B89D844A3214CEE1DDBB /* ColdClass.cpp in Sources */,
+				D4732527E090CFBBCF0989DF2CAE8E25 /* Conv.cpp in Sources */,
+				91F999717A854CD3C1A687C4C1F9697D /* Demangle.cpp in Sources */,
+				E6460BD6D998979E4BE60C1310926BAD /* Demangle.cpp in Sources */,
+				8EFAF668A2A192EE3ED4EBA85D870141 /* dynamic.cpp in Sources */,
+				17A391BB13476C8CE8E80D089859AC56 /* F14Table.cpp in Sources */,
+				BED7B4416789526B96566CAE7BF34588 /* Folly-dummy.m in Sources */,
+				0E13BB4C34D042506ED18BFBFA2A9EE9 /* Format.cpp in Sources */,
+				3DD1220136E239C6FE9F0BE4F92D59FA /* json.cpp in Sources */,
+				A2CFB4DF7A0130E9ED1AC884EE40B9EF /* json_pointer.cpp in Sources */,
+				2B90A4AF6E0DD894CFE5DDB9D0FF8829 /* MallocImpl.cpp in Sources */,
+				541D0290E0311E546325C16BC0E8B502 /* ScopeGuard.cpp in Sources */,
+				A497883CB0ED86ED1A54921BABE26F08 /* SpookyHashV2.cpp in Sources */,
+				11A190F94041F4FB90B084000A7908A6 /* String.cpp in Sources */,
+				59B4EFE86BC2E37179EE06AB10C6EE0C /* Unicode.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6811222E7082452ED1D60FD2A5E97196 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				022CA9B5B34EE5E0409B3688DB0A6366 /* Pods-reactapp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D639B6A57AB493EA3EC82827F9103E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FEF88A19681B9F158FF5884D6D77FFC /* Pods-reactapp-tvOSTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1F36845AB2137F1A13D2758CC8F9302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F4204CD326592440FDC493ED04E4A0 /* Pods-reactappTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC31ABDD8799A2DCCFA6267B0E106284 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				113826233B89C7ED2040802361CBA579 /* Pods-reactapp-tvOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A38DFE0AD824FF9A8FB71C7702B02C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "boost-for-react-native";
+			target = ED2506AE7DE35D654F61254441EA7155 /* boost-for-react-native */;
+			targetProxy = 13A57283AEFA2381D1D236DD21A285CB /* PBXContainerItemProxy */;
+		};
+		0D0710579294D744C72859D6D8CDB1E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-reactapp";
+			target = BCA4D9748C95E600ED83C3C4AF624B1A /* Pods-reactapp */;
+			targetProxy = E6A8C6DCC58EE3D9052F01B585114780 /* PBXContainerItemProxy */;
+		};
+		5F1998DD0B7D450A139C74FF5A151630 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = glog;
+			target = D0EFEFB685D97280256C559792236873 /* glog */;
+			targetProxy = 68C1939016F7223C77C197BED3AEB740 /* PBXContainerItemProxy */;
+		};
+		7B5B4064777BB2376A1C9F69FE0BDCA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "boost-for-react-native";
+			target = ED2506AE7DE35D654F61254441EA7155 /* boost-for-react-native */;
+			targetProxy = 41532F9DD0F0B874B396254CD16CBE03 /* PBXContainerItemProxy */;
+		};
+		8D3CE9FE37E6B3AB1BE9329D53AEB537 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DoubleConversion;
+			target = 2AB2EF542954AB1C999E03BFEF8DE806 /* DoubleConversion */;
+			targetProxy = 2B29CCD7744E02D7DC1430B5706EAE63 /* PBXContainerItemProxy */;
+		};
+		A9FDD3A31113BEB43FC3968E795FCB22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Folly;
+			target = A4F685BE3CAC127BDCE4E0DBBD88D191 /* Folly */;
+			targetProxy = 82B9281C86CF0965E156F3C45DD44B1C /* PBXContainerItemProxy */;
+		};
+		C090EB7945734DA08733A286EFD47FDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-reactapp";
+			target = BCA4D9748C95E600ED83C3C4AF624B1A /* Pods-reactapp */;
+			targetProxy = BC376E44808A067D684EEFDFBB9EF60E /* PBXContainerItemProxy */;
+		};
+		C6B9BF8A605CA42C877098D487CA3694 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DoubleConversion;
+			target = 2AB2EF542954AB1C999E03BFEF8DE806 /* DoubleConversion */;
+			targetProxy = A9EC412C6A592DA7DF17C16A0FDAD976 /* PBXContainerItemProxy */;
+		};
+		D7475080713311B57A2767F9903FC994 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = glog;
+			target = D0EFEFB685D97280256C559792236873 /* glog */;
+			targetProxy = 02DE86EC46FEBA8FD216C7A9D530A5CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10F02083C1D9D250143C0F099845D87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11AE335C2CA0E9C2B4AA0E6D0D3FD683 /* Pods-reactapp-tvOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-reactapp-tvOS/Pods-reactapp-tvOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-reactapp-tvOS/Pods-reactapp-tvOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		10FD5A2139D7A46BCCA235D0D3C790EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C602A215A81DBAD7080BB1942B8BE0C /* Folly.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Folly/Folly-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Folly/Folly-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Folly/Folly.modulemap";
+				PRODUCT_MODULE_NAME = folly;
+				PRODUCT_NAME = folly;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		46EBC942C5888AE1C64E0FE7BCDC9B28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C602A215A81DBAD7080BB1942B8BE0C /* Folly.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Folly/Folly-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Folly/Folly-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Folly/Folly.modulemap";
+				PRODUCT_MODULE_NAME = folly;
+				PRODUCT_NAME = folly;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4839C86E0019C79B616D07531F795A81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFD0AA537601D3D481A2C030BA41E185 /* Pods-reactapp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-reactapp/Pods-reactapp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-reactapp/Pods-reactapp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6102AAACF1F680356B7D3FAF0632D673 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		644155C6F353E26188DCE6892EE9F034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E989F6316A747D8F1D48607134C17D99 /* boost-for-react-native.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		698678661D0D27C984525F5CA49989E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2567FAC11A49380B4202A9984276366C /* DoubleConversion.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DoubleConversion/DoubleConversion-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DoubleConversion/DoubleConversion-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DoubleConversion/DoubleConversion.modulemap";
+				PRODUCT_MODULE_NAME = DoubleConversion;
+				PRODUCT_NAME = DoubleConversion;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		70B1818A23CAB7C58E2C2CDA2216CECC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70E64C24A0F35B33005F69B9799AE655 /* glog.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/glog/glog-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/glog/glog-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/glog/glog.modulemap";
+				PRODUCT_MODULE_NAME = glog;
+				PRODUCT_NAME = glog;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		74B0FF39064F62AB7658CBE5F4007F2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B04A1A41A7099CF9EBC41FA41DB07AB3 /* Pods-reactappTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-reactappTests/Pods-reactappTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-reactappTests/Pods-reactappTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8BBA25EDDDAEDE7FFB8870004DC7E4C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		960D79C95D038AEBDE09A1EA1C607E56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 800CA85028D8049E78CDA8AC11A92130 /* Pods-reactapp-tvOS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-reactapp-tvOS/Pods-reactapp-tvOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-reactapp-tvOS/Pods-reactapp-tvOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AAC9FDDB7F6B675BD6E71BD8877F6C9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2567FAC11A49380B4202A9984276366C /* DoubleConversion.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DoubleConversion/DoubleConversion-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DoubleConversion/DoubleConversion-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DoubleConversion/DoubleConversion.modulemap";
+				PRODUCT_MODULE_NAME = DoubleConversion;
+				PRODUCT_NAME = DoubleConversion;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE6CAB1CBF3C5C8F2705920FE0FCAB62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E989F6316A747D8F1D48607134C17D99 /* boost-for-react-native.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA67BC64C316CD115681E5032015B724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81ED490951923BFC8E22A8A869886C21 /* Pods-reactappTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-reactappTests/Pods-reactappTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-reactappTests/Pods-reactappTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D25A9D94795A997034213F52E0F92867 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 117227230D25D34CE60174E62DA22BB7 /* Pods-reactapp-tvOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-reactapp-tvOSTests/Pods-reactapp-tvOSTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-reactapp-tvOSTests/Pods-reactapp-tvOSTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DA29C70444DFA1EA353703B37F49B43B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CF6403F549D426CD89B1F4257C16B55 /* Pods-reactapp-tvOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-reactapp-tvOSTests/Pods-reactapp-tvOSTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-reactapp-tvOSTests/Pods-reactapp-tvOSTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EF3C54114D7B0435998D3C3CB3E1BEE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70E64C24A0F35B33005F69B9799AE655 /* glog.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/glog/glog-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/glog/glog-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/glog/glog.modulemap";
+				PRODUCT_MODULE_NAME = glog;
+				PRODUCT_NAME = glog;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FD3798075C35F9492F75083D7D89B103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03419317970359B85C1AA98992A9907F /* Pods-reactapp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-reactapp/Pods-reactapp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-reactapp/Pods-reactapp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BDC53870C6816C8C7BE544CEA34504D /* Build configuration list for PBXNativeTarget "Pods-reactapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD3798075C35F9492F75083D7D89B103 /* Debug */,
+				4839C86E0019C79B616D07531F795A81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BBA25EDDDAEDE7FFB8870004DC7E4C0 /* Debug */,
+				6102AAACF1F680356B7D3FAF0632D673 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9248E04DE07732CECAC5FC2654CBC5B6 /* Build configuration list for PBXNativeTarget "Pods-reactapp-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25A9D94795A997034213F52E0F92867 /* Debug */,
+				DA29C70444DFA1EA353703B37F49B43B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E407D2DCCBD67443FE9CAAAB7F9CEB2 /* Build configuration list for PBXAggregateTarget "boost-for-react-native" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				644155C6F353E26188DCE6892EE9F034 /* Debug */,
+				AE6CAB1CBF3C5C8F2705920FE0FCAB62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A47886178CC194E8837ED1F2644630D2 /* Build configuration list for PBXNativeTarget "Pods-reactappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74B0FF39064F62AB7658CBE5F4007F2F /* Debug */,
+				CA67BC64C316CD115681E5032015B724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAEAE8022802FDF571BCBC692A26CD16 /* Build configuration list for PBXNativeTarget "glog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3C54114D7B0435998D3C3CB3E1BEE3 /* Debug */,
+				70B1818A23CAB7C58E2C2CDA2216CECC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD18D67E2E6CA48130DD53403061EF02 /* Build configuration list for PBXNativeTarget "Pods-reactapp-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				960D79C95D038AEBDE09A1EA1C607E56 /* Debug */,
+				10F02083C1D9D250143C0F099845D87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C854CC0718B3EE6C3B5483B54742850E /* Build configuration list for PBXNativeTarget "Folly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46EBC942C5888AE1C64E0FE7BCDC9B28 /* Debug */,
+				10FD5A2139D7A46BCCA235D0D3C790EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD7C0E42E3773EB93812FE523DAECE84 /* Build configuration list for PBXNativeTarget "DoubleConversion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				698678661D0D27C984525F5CA49989E1 /* Debug */,
+				AAC9FDDB7F6B675BD6E71BD8877F6C9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -7,7 +7,6 @@ const authMiddleware = require("../../middleware/auth");
 
 //User Model
 const User = require("../../models/User");
-const CoupleDetails = require("../../models/CoupleDetails");
 
 const ALPHABET = "0123456789ABCDEFGHIKLMNOPQRSTUVWXYZ";
 
@@ -157,25 +156,6 @@ router.get("/", authMiddleware, (req, res) => {
       } else {
         res.status(400).json({ msg: "Get user infor failed" });
       }
-    });
-});
-
-// @route GET api/user/couple_details/:couple_id
-// @desc Sync User couple Id
-// @access Public
-router.get("/couple_details", authMiddleware, (req, res) => {
-  const { coupleID } = req.query;
-  CoupleDetails.findOne({ coupleID })
-    .then(couple => {
-      if (couple) {
-        res.json(couple);
-      } else {
-        res.status(400).json({ msg: "Could not find couple details" });
-      }
-    })
-    .catch(err => {
-      console.log("GET couple_details err", err);
-      res.status(400).json({ msg: "Could not find couple details" });
     });
 });
 

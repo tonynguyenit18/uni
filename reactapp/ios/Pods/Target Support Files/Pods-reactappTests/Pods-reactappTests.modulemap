@@ -1,0 +1,6 @@
+framework module Pods_reactappTests {
+  umbrella header "Pods-reactappTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
