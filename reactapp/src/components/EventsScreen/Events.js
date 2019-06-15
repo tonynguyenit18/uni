@@ -19,7 +19,8 @@ class Events extends Component {
     super(props);
     this.state = {
       currentComponentIndex: 1,
-      openAddMemoryImage: false
+      openAddMemoryImage: false,
+      memoryThumbnails: []
     };
   }
   /*--- End Lifecycle methods region */
@@ -51,6 +52,16 @@ class Events extends Component {
     this.setState({ openAddMemoryImage: true });
   };
 
+  addMemoryThumbnailToList = (memoryName, firstImageSource) => {
+    this.setState({
+      openAddMemoryImage: false,
+      memoryThumbnails: [
+        ...this.state.memoryThumbnails,
+        { memoryName, firstImageSource }
+      ]
+    });
+  };
+
   /*--- End Util methods region */
   render() {
     return (
@@ -59,6 +70,7 @@ class Events extends Component {
           <View style={styles.addMemoryImage}>
             <AddMemoryImage
               closeCallback={() => this.setState({ openAddMemoryImage: false })}
+              addMemorySuccedCallback={this.addMemoryThumbnailToList}
             />
           </View>
         ) : (
@@ -100,7 +112,7 @@ class Events extends Component {
             </View>
             <View>
               {this.state.currentComponentIndex == 1 ? (
-                <Memories />
+                <Memories data={this.state.memoryThumbnails} />
               ) : (
                 <NextEvent />
               )}

@@ -7,12 +7,18 @@ const MessageSchema = new Schema({
   createAt: Number
 });
 
+const MemorySchema = new Schema({
+  memoryName: String,
+  imageUrls: Array
+});
+
 const CoupleDetailsSchema = new Schema({
   coupleID: {
     type: String,
     required: true
   },
-  messages: [MessageSchema]
+  messages: [MessageSchema],
+  memories: [MemorySchema]
 });
 
 module.exports = CoupleDetails = mongoose.model(

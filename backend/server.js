@@ -4,6 +4,7 @@ const config = require("config");
 var cors = require("cors");
 const users = require("./routes/api/users");
 const auth = require("./routes/api/auth");
+const couple = require("./routes/api/couple");
 const connect = require("./routes/api/chat");
 
 const app = express();
@@ -30,5 +31,6 @@ mongoose
 //User routes
 app.use("/api/user", users);
 app.use("/api/auth", auth);
+app.use("/api/couple", couple);
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`App started on port ${port}`));

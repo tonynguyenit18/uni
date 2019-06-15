@@ -59,7 +59,7 @@ export const getCoupleInfo = (token, coupleID) => dispatch => {
   };
 
   axiosInstance
-    .get(`api/user/couple_details?coupleID=${coupleID}`, config)
+    .get(`api/couple?coupleID=${coupleID}`, config)
     .then(response =>
       dispatch({
         type: REQUEST_COUPLE_INFO_SUCCESS,

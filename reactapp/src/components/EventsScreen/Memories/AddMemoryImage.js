@@ -3,7 +3,6 @@ import {
   View,
   TextInput,
   FlatList,
-  Text,
   Button,
   Image,
   Dimensions,
@@ -12,7 +11,18 @@ import {
 import { connect } from "react-redux";
 import styles from "../styles";
 
+import { RNS3 } from "react-native-aws3";
+import Toast, { DURATION } from "react-native-easy-toast";
+
+import Realm from "realm";
+import Schema from "../../../Realm";
+
 import CropImagePicker from "react-native-image-crop-picker";
+import ClickableImage from "../../SharedComponents/ClickableImage";
+
+import { postMemory } from "../../../Helpers/apiHelper";
+
+import { AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY } from "../../../config";
 
 const NUMBER_OF_COLUMN = 3;
 class AddMemoryImage extends Component {
@@ -20,26 +30,132 @@ class AddMemoryImage extends Component {
     super(props);
     this.state = {
       isLoading: false,
-      data: []
+      images: [],
+      memoryName: "",
+      coupleID: "",
+      token: ""
     };
+  }
+
+  componentDidMount() {
+    this.setUpStateFromRealm();
   }
 
   handleCloseClick = () => {
     this.props.closeCallback();
   };
 
-  handleAddPhotClick = () => {
+  handleSaveClick = () => {
+    this.setState({ isLoading: true });
+    this.uploadImages();
+  };
+
+  handleAddPhotoClick = () => {
     this.setState({ isLoading: true });
     CropImagePicker.openPicker({
       multiple: true,
       includeBase64: true
-    }).then(images => {
-      console.log(images);
-      images = images.map(image => image.data);
-      this.setState({ data: [...this.state.data, ...images] }, () =>
-        console.log(this.state)
-      );
+    })
+      .then(images => {
+        console.log(images);
+        images = images.map(image => {
+          return {
+            data: image.data,
+            uri: image.sourceURL,
+            imageName: image.filename
+          };
+        });
+        this.setState({ images: [...this.state.images, ...images] }, () =>
+          console.log(this.state)
+        );
+      })
+      .catch(err => {
+        console.log("Image picker err: ", err);
+        this.setState({ isLoading: false });
+      });
+  };
+
+  handleSucceedUpload = () => {
+    const memoryName = this.state.memoryName;
+    const firstImageSource = {
+      uri: "data:image/png;base64," + this.state.images[0].data
+    };
+    this.props.addMemorySuccedCallback(memoryName, firstImageSource);
+  };
+
+  setUpStateFromRealm = () => {
+    Realm.open({ schema: Schema }).then(realm => {
+      const coupleID = realm.objects("User")[0].coupleID;
+      const token = realm.objects("User")[0].token;
+      this.setState({ token, coupleID });
     });
+  };
+
+  uploadImages = () => {
+    if (
+      !this.state.memoryName ||
+      !this.state.images ||
+      !this.state.images.length > 0
+    ) {
+      this.setState({ isLoading: false });
+      return console.log("Missing field");
+    }
+    if (!this.state.coupleID) {
+      this.setState({ isLoading: false });
+      return console.log("coupleID not found");
+    }
+
+    const uploadImagePromises = this.state.images.map((image, index) => {
+      const file = {
+        uri: image.uri,
+        name: `${image.imageName}.png`,
+        type: "image/png"
+      };
+      const configs = {
+        keyPrefix: `memories-images/${this.state.coupleID}/${
+          this.state.memoryName
+        }/`,
+        bucket: "ios-uni-app",
+        region: "us-east-2",
+        accessKey: AWS_ACCESS_KEY_ID,
+        secretKey: AWS_SECRET_ACCESS_KEY,
+        successActionStatus: 201
+      };
+
+      return RNS3.put(file, configs);
+    });
+
+    Promise.all(uploadImagePromises)
+      .then(response => {
+        console.log("res ", response);
+        const imageUrls = response.map(item => item.body.postResponse.location);
+        this.uploadMemoryToDataBase(imageUrls);
+      })
+      .catch(err => {
+        console.log("Uploading err: ", err);
+        this.setState({ isLoading: false });
+      });
+  };
+
+  uploadMemoryToDataBase = imageUrls => {
+    const token = this.state.token;
+    const coupleID = this.state.coupleID;
+    const newMemory = { memoryName: this.state.memoryName, imageUrls };
+    const body = { coupleID, newMemory };
+    postMemory(token, body)
+      .then(response => {
+        if (response.data) {
+          this.setState({ isLoading: false });
+          this.handleSucceedUpload();
+        } else {
+          console.log("Upload Memory response", response);
+          this.setState({ isLoading: false });
+        }
+      })
+      .catch(err => {
+        console.log("Upload Memory err", err);
+        this.setState({ isLoading: false });
+      });
   };
 
   renderItem = ({ item }) => (
@@ -54,7 +170,7 @@ class AddMemoryImage extends Component {
     >
       <Image
         style={{ width: "100%", height: "100%" }}
-        source={{ uri: "data:image/png;base64," + item }}
+        source={{ uri: "data:image/png;base64," + item.data }}
         onLoad={() => this.setState({ isLoading: false })}
       />
     </View>
@@ -84,23 +200,40 @@ class AddMemoryImage extends Component {
             />
           </View>
         ) : null}
-        <View
-          style={{
-            position: "absolute",
-            top: 0,
-            right: 5,
-            marginTop: -10,
-            zIndex: 2
-          }}
-        >
-          <Button title="X" color="#ff00ac" onPress={this.handleCloseClick} />
+        <View style={{ height: "10%", flexDirection: "row" }}>
+          <View style={{ marginTop: "-2%" }}>
+            <Button title="X" color="#ff00ac" onPress={this.handleCloseClick} />
+          </View>
+          <TextInput
+            style={{
+              width: "82%",
+              backgroundColor: "#f4f4f4",
+              borderRadius: 10,
+              height: "50%",
+              paddingHorizontal: 10,
+              marginRight: 10,
+              marginTop: 10
+            }}
+            placeholder="Enter album name"
+            onChangeText={text => this.setState({ memoryName: text })}
+          />
+          <View>
+            <ClickableImage
+              style={{
+                marginTop: 10,
+                width: 25,
+                height: 20,
+                marginTop: 15
+              }}
+              imageName="iconGalleryPink"
+              callback={this.handleAddPhotoClick}
+            />
+          </View>
         </View>
-        <View style={{ height: "10%" }}>
-          <TextInput style={{ width: "100%" }} placeholder="Enter album name" />
-        </View>
+
         <View style={{ height: "95%" }}>
           <FlatList
-            data={this.state.data}
+            data={this.state.images}
             extraData={this.state}
             keyExtractor={item => item}
             renderItem={this.renderItem}
@@ -117,7 +250,7 @@ class AddMemoryImage extends Component {
             flexDirection: "row"
           }}
         >
-          <Button title="Add photo" onPress={this.handleAddPhotClick} />
+          <Button title="Save" onPress={this.handleSaveClick} />
         </View>
       </View>
     );
