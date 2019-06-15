@@ -195,6 +195,7 @@ class Home extends Component {
       showOptionsPopup: false
     });
     ImagePicker.launchImageLibrary({}, response => {
+      console.log("responmse", response);
       this.processImagePickerResponse(response);
     });
   };

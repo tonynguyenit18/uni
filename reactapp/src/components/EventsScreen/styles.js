@@ -29,10 +29,9 @@ export default (styles = StyleSheet.create({
     paddingHorizontal: 5
   },
   buttonIcon: {
-    fontSize: 35,
-    fontFamily: "Cochin",
-    fontWeight: "bold",
-    color: "#ff00ac"
+    marginTop: 10,
+    width: 20,
+    height: 20
   },
   deactivatedTextButton: {
     fontSize: 20,
@@ -41,5 +40,12 @@ export default (styles = StyleSheet.create({
     color: "#ff00ac",
     paddingHorizontal: 5,
     opacity: 0.7
+  },
+  addMemoryImage: {
+    position: "absolute",
+    width: "100%",
+    height: "95%",
+    bottom: 0,
+    left: 0
   }
 }));
