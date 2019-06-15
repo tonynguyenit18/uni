@@ -1,16 +1,61 @@
 import React, { Component } from "react";
-import { View, Text, Image, FlatList } from "react-native";
-import { connect } from "react-redux";
-
-import Realm from "realm";
-import Schema from "../../../Realm";
+import { View, Text, Image, FlatList, ActivityIndicator } from "react-native";
 
 class Memories extends Component {
-  renderItem = ({ item }) => (
+  constructor(props) {
+    super(props);
+    this.state = {
+      memories: null,
+      loadingImageIdexArr: []
+    };
+  }
+
+  componentDidMount() {
+    const loadingImageIdexArr = this.props.data.memories.map(memory => true);
+    this.setState(
+      { loadingImageIdexArr, memories: this.props.data.memories },
+      () => console.log(loadingImageIdexArr)
+    );
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.data.memories.length != this.props.data.memories.length) {
+      const loadingImageIdexArr = this.props.data.memories.map(memory => true);
+      this.setState(
+        { loadingImageIdexArr, memories: this.props.data.memories },
+        () => console.log(loadingImageIdexArr)
+      );
+    }
+  }
+
+  handleLoadedImage = index => {
+    this.state.loadingImageIdexArr[index] = false;
+    this.setState({ loadingImageIdexArr: this.state.loadingImageIdexArr });
+  };
+
+  renderItem = ({ item, index }) => (
     <View style={{ width: "100%", height: 180, marginTop: 10 }}>
+      {this.state.loadingImageIdexArr[index] ? (
+        <View
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            marginTop: 40,
+            zIndex: 4
+          }}
+        >
+          <ActivityIndicator animating={true} color="#ff00ac" size="small" />
+        </View>
+      ) : null}
       <Image
-        style={{ width: "100%", height: "100%", opacity: 0.6 }}
-        source={item.firstImageSource}
+        style={{ width: null, height: null, flex: 1, opacity: 0.6 }}
+        source={{ uri: item.imageUrls[0] }}
+        onLoad={() => this.handleLoadedImage(index)}
       />
       <View
         style={{
@@ -33,6 +78,7 @@ class Memories extends Component {
             fontFamily: "Cochin",
             fontWeight: "bold"
           }}
+          onPress={() => this.props.eventImageClickCallback(index)}
         >
           {item.memoryName}
         </Text>
@@ -41,23 +87,19 @@ class Memories extends Component {
   );
 
   render() {
-    console.log("prop", this.props);
     return (
-      <View style={styles.container}>
-        <FlatList
-          data={this.props.data}
-          extraData={this.props}
-          keyExtractor={item => item.memoryName}
-          renderItem={this.renderItem}
-        />
+      <View style={{ height: "85%" }}>
+        {this.state.memories ? (
+          <FlatList
+            data={this.state.memories}
+            extraData={this.state}
+            keyExtractor={item => item._id}
+            renderItem={this.renderItem}
+          />
+        ) : null}
       </View>
     );
   }
 }
 
-const mapStateToProps = state => ({});
-
-export default connect(
-  mapStateToProps,
-  {}
-)(Memories);
+export default Memories;

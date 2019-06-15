@@ -28,7 +28,12 @@ export default (styles = StyleSheet.create({
     color: "#ff00ac",
     paddingHorizontal: 5
   },
-  buttonIcon: {
+  buttonBackIcon: {
+    marginTop: 15,
+    width: 10,
+    height: 20
+  },
+  buttonAddIcon: {
     marginTop: 10,
     width: 20,
     height: 20

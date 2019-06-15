@@ -12,13 +12,19 @@ const MemorySchema = new Schema({
   imageUrls: Array
 });
 
+const EventSchema = new Schema({
+  title: String,
+  dateAndTime: String
+});
+
 const CoupleDetailsSchema = new Schema({
   coupleID: {
     type: String,
     required: true
   },
-  messages: [MessageSchema],
-  memories: [MemorySchema]
+  messages: { type: [MessageSchema], default: [] },
+  memories: { type: [MemorySchema], default: [] },
+  nextEvents: { type: [EventSchema], default: [] }
 });
 
 module.exports = CoupleDetails = mongoose.model(

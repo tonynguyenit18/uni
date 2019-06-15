@@ -5,8 +5,7 @@ import {
   ActivityIndicator,
   StyleSheet,
   Alert,
-  DatePickerIOS,
-  TouchableWithoutFeedback
+  DatePickerIOS
 } from "react-native";
 import { connect } from "react-redux";
 import moment from "moment";

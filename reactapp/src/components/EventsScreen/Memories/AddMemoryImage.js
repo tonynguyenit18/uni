@@ -31,14 +31,8 @@ class AddMemoryImage extends Component {
     this.state = {
       isLoading: false,
       images: [],
-      memoryName: "",
-      coupleID: "",
-      token: ""
+      memoryName: ""
     };
-  }
-
-  componentDidMount() {
-    this.setUpStateFromRealm();
   }
 
   handleCloseClick = () => {
@@ -75,20 +69,8 @@ class AddMemoryImage extends Component {
       });
   };
 
-  handleSucceedUpload = () => {
-    const memoryName = this.state.memoryName;
-    const firstImageSource = {
-      uri: "data:image/png;base64," + this.state.images[0].data
-    };
-    this.props.addMemorySuccedCallback(memoryName, firstImageSource);
-  };
-
-  setUpStateFromRealm = () => {
-    Realm.open({ schema: Schema }).then(realm => {
-      const coupleID = realm.objects("User")[0].coupleID;
-      const token = realm.objects("User")[0].token;
-      this.setState({ token, coupleID });
-    });
+  handleSucceedUpload = memories => {
+    this.props.addMemorySuccedCallback(memories);
   };
 
   uploadImages = () => {
@@ -100,7 +82,7 @@ class AddMemoryImage extends Component {
       this.setState({ isLoading: false });
       return console.log("Missing field");
     }
-    if (!this.state.coupleID) {
+    if (!this.props.coupleInfo.coupleID) {
       this.setState({ isLoading: false });
       return console.log("coupleID not found");
     }
@@ -112,7 +94,7 @@ class AddMemoryImage extends Component {
         type: "image/png"
       };
       const configs = {
-        keyPrefix: `memories-images/${this.state.coupleID}/${
+        keyPrefix: `memories-images/${this.props.coupleInfo.coupleID}/${
           this.state.memoryName
         }/`,
         bucket: "ios-uni-app",
@@ -138,22 +120,22 @@ class AddMemoryImage extends Component {
   };
 
   uploadMemoryToDataBase = imageUrls => {
-    const token = this.state.token;
-    const coupleID = this.state.coupleID;
+    const token = this.props.token;
+    const coupleID = this.props.coupleInfo.coupleID;
     const newMemory = { memoryName: this.state.memoryName, imageUrls };
     const body = { coupleID, newMemory };
     postMemory(token, body)
       .then(response => {
         if (response.data) {
           this.setState({ isLoading: false });
-          this.handleSucceedUpload();
+          this.handleSucceedUpload(response.data.memories);
         } else {
           console.log("Upload Memory response", response);
           this.setState({ isLoading: false });
         }
       })
       .catch(err => {
-        console.log("Upload Memory err", err);
+        console.log("Upload Memory err", err.message);
         this.setState({ isLoading: false });
       });
   };
@@ -177,14 +159,18 @@ class AddMemoryImage extends Component {
   );
 
   render() {
-    console.log(this.state);
     return (
-      <View style={styles.container}>
+      <View
+        style={{
+          ...styles.container,
+          backgroundColor: "rgba(255,255,255,0.95)"
+        }}
+      >
         {this.state.isLoading ? (
           <View
             style={{
               position: "absolute",
-              top: 0,
+              top: "10%",
               left: 0,
               right: 0,
               bottom: 0,

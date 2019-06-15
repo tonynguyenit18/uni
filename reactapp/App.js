@@ -51,9 +51,9 @@ const AppNavigator = createStackNavigator({
     screen: Setting,
     navigationOptions: {
       title: "Setting",
-      headerTintColor: "#fff",
+      headerTintColor: "#ff00ac",
       headerStyle: {
-        backgroundColor: "#ff00ac"
+        backgroundColor: "#fff"
       },
       headerTitleStyle: {
         fontWeight: "bold",

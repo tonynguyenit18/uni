@@ -17,3 +17,13 @@ export const postMemory = (token, body) => {
 
   return axiosInstance.post("api/couple/add_memory", body, config);
 };
+
+export const postEvent = (token, body) => {
+  const config = {
+    headers: {
+      "x-auth-token": token
+    }
+  };
+
+  return axiosInstance.post("api/couple/add_event", body, config);
+};

@@ -1,24 +1,82 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
-import { connect } from "react-redux";
-
-import Realm from "realm";
-import Schema from "../../../Realm";
+import { View, FlatList, Text } from "react-native";
 
 class NextEvent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nextEvents: null
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ nextEvents: this.props.nextEvents });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.nextEvents.length != this.props.nextEvents.length) {
+      this.setState({ nextEvents: this.props.nextEvents });
+    }
+  }
+
+  renderItem = ({ item }) => (
+    <View
+      style={{
+        width: "90%",
+        minHeight: 100,
+        marginTop: 10,
+        marginHorizontal: "5%",
+        backgroundColor: "#f4f4f4",
+        borderRadius: 20,
+        paddingVertical: 10,
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center"
+      }}
+    >
+      <Text
+        style={{
+          maxWidth: "80%",
+          textAlign: "center",
+          color: "#ff00ac",
+          fontSize: 20,
+          fontFamily: "Cochin",
+          fontWeight: "bold",
+          paddingVertical: 5
+        }}
+      >
+        {item.title}
+      </Text>
+      <Text
+        style={{
+          maxWidth: "80%",
+          textAlign: "center",
+          color: "#545454",
+          fontSize: 15,
+          fontFamily: "Cochin",
+          paddingVertical: 5
+        }}
+      >
+        {item.dateAndTime}
+      </Text>
+    </View>
+  );
+
   render() {
-    console.log("next event");
+    console.log("next event", this.state);
     return (
-      <View style={styles.container}>
-        <Text>Next Event</Text>
+      <View style={{ height: "85%" }}>
+        {this.state.nextEvents ? (
+          <FlatList
+            data={this.state.nextEvents}
+            extraData={this.state}
+            keyExtractor={item => item._id}
+            renderItem={this.renderItem}
+          />
+        ) : null}
       </View>
     );
   }
 }
 
-const mapStateToProps = state => ({});
-
-export default connect(
-  mapStateToProps,
-  {}
-)(NextEvent);
+export default NextEvent;
