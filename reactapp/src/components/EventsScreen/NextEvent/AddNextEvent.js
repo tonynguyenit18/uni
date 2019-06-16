@@ -44,7 +44,7 @@ class AddNextEvent extends Component {
   handleDateChange = date => {
     console.log("choosenDate", date);
     const choosenDate = moment(date).format("h:mm A, MMMM Do YYYY");
-    this.setState({ choosenDate }, () => console.log("state", this.state));
+    this.setState({ choosenDate });
   };
 
   addEventToDatabase = (title, dateAndTime) => {

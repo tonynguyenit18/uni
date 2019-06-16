@@ -44,7 +44,7 @@ export default (styles = StyleSheet.create({
   messageText: {
     width: "80%",
     marginTop: 20,
-    marginBottom: 30,
+    marginBottom: 20,
     textAlign: "center"
   },
   coupleIDInput: {

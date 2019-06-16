@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 
+import * as Animatable from "react-native-animatable";
 import styles from "./styles";
 
 class CoupleIDModel extends Component {
@@ -19,8 +20,14 @@ class CoupleIDModel extends Component {
     };
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.error && prevProps.error != this.props.error) {
+      this.setState({ error: this.props.error.msg });
+    }
+  }
+
   handleTextChange = fieldName => value => {
-    this.setState({ [fieldName]: value });
+    this.setState({ [fieldName]: value, error: null });
   };
 
   handleSyncClicked = e => {
@@ -44,24 +51,57 @@ class CoupleIDModel extends Component {
 
   showCoupleIDModel = coupleID => {
     return (
-      <View style={styles.coupleIdModelWithID}>
+      <Animatable.View
+        animation="slideInDown"
+        iterationCount={1}
+        duration={1300}
+        style={styles.coupleIdModelWithID}
+      >
         <Text style={{ fontSize: 15, color: "#333" }}>Your couple ID</Text>
         <Text style={styles.coupleIDShowText}>{coupleID}</Text>
-      </View>
+        <View
+          style={{ flexDirection: "row", position: "absolute", bottom: 10 }}
+        >
+          <TouchableOpacity onPress={() => this.props.closeCallback()}>
+            <Text style={{ color: "#0595ff", marginLeft: 5, fontSize: 20 }}>
+              Close
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Animatable.View>
     );
   };
 
   creatCoupleIDModel = (createClickedCallBack, isLoading) => {
     return (
-      <View style={styles.coupleIdModel}>
+      <Animatable.View
+        animation="zoomIn"
+        iterationCount={1}
+        duration={500}
+        style={styles.coupleIdModel}
+      >
         <Text style={styles.messageText}>
-          Enter your couple ID created by your partner or create a new one and
-          share with her/him.
+          Enter your couple ID(6 digits) created by your partner or create a new
+          one and share with her/him.
         </Text>
+        {this.state.error ? (
+          <Text
+            style={{
+              width: "80%",
+              textAlign: "center",
+              color: "#ff0000",
+              marginBottom: 5
+            }}
+          >
+            {this.state.error}
+          </Text>
+        ) : null}
         <TextInput
           style={styles.coupleIDInput}
           placeholder="Enter your couple ID"
           onChangeText={this.handleTextChange("coupleID")}
+          autoCapitalize="characters"
+          maxLength={8}
         />
         <TouchableOpacity
           style={styles.syncButton}
@@ -84,20 +124,29 @@ class CoupleIDModel extends Component {
             <Text style={{ color: "#0595ff", marginLeft: 5 }}>Create</Text>
           </TouchableOpacity>
         </View>
+        <View
+          style={{ flexDirection: "row", position: "absolute", bottom: 10 }}
+        >
+          <TouchableOpacity onPress={() => this.props.logout()}>
+            <Text style={{ color: "#0595ff", marginLeft: 5, fontSize: 20 }}>
+              Logout
+            </Text>
+          </TouchableOpacity>
+        </View>
         <ActivityIndicator
           size="large"
-          color="#ccc"
-          style={{ marginTop: 30 }}
+          color="#ff00ac"
+          style={{ marginBottom: 30 }}
           animating={isLoading}
         />
-      </View>
+      </Animatable.View>
     );
   };
 }
 
 const mapStateToProps = state => ({
   isLoading: state.userInfo.isLoading,
-  coupleID: state.userInfo.coupleID
+  error: state.userInfo.error
 });
 
 export default connect(

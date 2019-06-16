@@ -162,7 +162,9 @@ class Setting extends Component {
       .then(realm => {
         realm.write(() => {
           const allUser = realm.objects("User");
+          const allMessage = realm.objects("Message");
           realm.delete(allUser);
+          realm.delete(allMessage);
           this.props.clearState();
           if (this.props.navigation) {
             this.props.navigation.dispatch(resetAction);
