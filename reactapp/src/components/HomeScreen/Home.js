@@ -5,16 +5,15 @@ import {
   View,
   Text,
   Image,
-  TextInput,
   Linking,
   Button,
-  TouchableOpacity
+  Alert
 } from "react-native";
 import ImagePicker from "react-native-image-picker";
 
 import * as Animatable from "react-native-animatable";
 import { RNS3 } from "react-native-aws3";
-import Toast, { DURATION } from "react-native-easy-toast";
+import Toast from "react-native-easy-toast";
 import { StackActions, NavigationActions } from "react-navigation";
 
 import Realm from "realm";
@@ -30,13 +29,15 @@ import AsyncClickableImage from "../SharedComponents/AsyncClickableImage";
 import {
   createCoupleID,
   sycnCoupleID,
-  getUserInfo
+  getUserInfo,
+  clearState
 } from "../../reduxActions/userActions";
 class Home extends Component {
   /* Life cycle methods region */
   constructor(props) {
     super(props);
     this.state = {
+      firtsTimeHaveCoupleID: false,
       uploadImageMessage: "",
       userImageSource: null,
       partnerImageSource: null,
@@ -75,11 +76,20 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    console.log("componentDidMount");
     this.getUserInfo();
   }
 
   componentDidUpdate(prevProp) {
     this.checkLogInStatus();
+
+    if (
+      prevProp.userInfo.user &&
+      this.props.userInfo.partner &&
+      prevProp.userInfo.partner != this.props.userInfo.partner
+    ) {
+      this.showSyncSuccesAlert(this.props.userInfo.partner.username);
+    }
 
     if (
       this.props.userInfo &&
@@ -159,14 +169,16 @@ class Home extends Component {
 
   /* Handle events function */
   handleCreateClickedCallBack = () => {
-    this.props.createCoupleID(this.props.user.token);
+    this.setState({ firtsTimeHaveCoupleID: true });
+    this.props.createCoupleID(this.state.user.token);
   };
 
   handleSyncClickedCallBack = body => {
-    this.props.sycnCoupleID(this.props.user.token, body);
+    this.props.sycnCoupleID(this.state.user.token, body);
   };
 
   handlEventClick = iconName => {
+    console.log("partnner", this.state.partner);
     switch (iconName) {
       case "iconSetting":
         if (this.props.navigation) {
@@ -174,9 +186,33 @@ class Home extends Component {
         }
         break;
       case "iconChat":
+        if (!this.state.partner._id) {
+          Alert.alert(
+            "Notice",
+            `You have not synced with your partner. Connect with your partner by coupleID to enable chat feature!`,
+            [
+              {
+                text: "OK"
+              }
+            ]
+          );
+          return;
+        }
         this.navigateToScreen("Chat");
         break;
       case "iconPhone":
+        if (!this.state.partner._id) {
+          Alert.alert(
+            "Notice",
+            `You have not synced with your partner. Connect with your partner by coupleID to enable call feature!`,
+            [
+              {
+                text: "OK"
+              }
+            ]
+          );
+          return;
+        }
         this.makeAPhoneCall();
         break;
       case "iconCalender":
@@ -212,7 +248,10 @@ class Home extends Component {
   };
 
   handleCancelClick = () => {
-    if (this.props.navigation.getParam("iconName", "NO_ICON") === "RESET") {
+    if (
+      this.state.pickingUserFor === "background" &&
+      this.props.navigation.getParam("iconName", "NO_ICON") === "RESET"
+    ) {
       this.props.navigation.navigate("Setting");
     }
     this.setState({ showOptionsPopup: false });
@@ -222,8 +261,20 @@ class Home extends Component {
 
   /*---- Util functions ----*/
 
+  showSyncSuccesAlert = partnerName => {
+    Alert.alert("Synced", `You have synced with ${partnerName}!`, [
+      {
+        text: "OK"
+      }
+    ]);
+  };
+
   makeAPhoneCall = () => {
-    Linking.openURL("tel: 0431462373");
+    const phoneNo =
+      this.state.partner && this.state.partner.phoneNo
+        ? this.state.partner.phoneNo
+        : "0431462373";
+    Linking.openURL(`tel: ${phoneNo}`);
   };
   navigateToScreen = screenName => {
     if (this.props.navigation) {
@@ -415,10 +466,28 @@ class Home extends Component {
       });
   };
 
+  logout = () => {
+    console.log("logout");
+    Realm.open({ schema: Schema })
+      .then(realm => {
+        realm.write(() => {
+          const allUser = realm.objects("User");
+          const allMessage = realm.objects("Message");
+          realm.delete(allUser);
+          realm.delete(allMessage);
+          this.props.clearState();
+          if (this.props.navigation) {
+            this.props.navigation.dispatch(resetAction);
+          }
+        });
+      })
+      .catch(err => console.log("Realm Error in Setting: ", err));
+  };
   /*---- End Util functions ----*/
 
   render() {
-    const coupleID = this.state.user;
+    const { coupleID } = this.state.user;
+    console.log("coupleID", coupleID);
     return (
       <ImageBackground
         source={
@@ -430,16 +499,6 @@ class Home extends Component {
         }
         style={styles.imageBackground}
       >
-        {!coupleID ? (
-          <React.Fragment>
-            <View style={styles.fadedColorLayout} />
-            <CoupleIDModel
-              createClickedCallBack={this.handleCreateClickedCallBack}
-              syncClickedCallBack={this.handleSyncClickedCallBack}
-            />
-          </React.Fragment>
-        ) : null}
-
         <View
           style={{
             width: "100%",
@@ -660,6 +719,21 @@ class Home extends Component {
         ) : null}
 
         {/*--- End 3 Buttons Popup ---*/}
+
+        {!coupleID || this.state.firtsTimeHaveCoupleID ? (
+          <React.Fragment>
+            <View style={styles.fadedColorLayout} />
+            <CoupleIDModel
+              createClickedCallBack={this.handleCreateClickedCallBack}
+              syncClickedCallBack={this.handleSyncClickedCallBack}
+              closeCallback={() =>
+                this.setState({ firtsTimeHaveCoupleID: false })
+              }
+              logout={this.logout}
+              coupleID={coupleID}
+            />
+          </React.Fragment>
+        ) : null}
       </ImageBackground>
     );
   }
@@ -677,5 +751,5 @@ const resetAction = StackActions.reset({
 
 export default connect(
   mapStateToProps,
-  { createCoupleID, sycnCoupleID, getUserInfo }
+  { createCoupleID, sycnCoupleID, getUserInfo, clearState }
 )(Home);

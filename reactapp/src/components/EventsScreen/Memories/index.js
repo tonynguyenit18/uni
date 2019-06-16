@@ -89,14 +89,27 @@ class Memories extends Component {
   render() {
     return (
       <View style={{ height: "85%" }}>
-        {this.state.memories ? (
+        {this.state.memories && this.state.memories.length > 0 ? (
           <FlatList
             data={this.state.memories}
             extraData={this.state}
             keyExtractor={item => item._id}
             renderItem={this.renderItem}
           />
-        ) : null}
+        ) : (
+          <View
+            style={{
+              width: "100%",
+              height: "100%",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <Text style={{ fontSize: 25, fontWeight: "300", color: "#545454" }}>
+              No memories
+            </Text>
+          </View>
+        )}
       </View>
     );
   }

@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 import styles from "../styles";
 
 import { RNS3 } from "react-native-aws3";
-import Toast, { DURATION } from "react-native-easy-toast";
+import Toast from "react-native-easy-toast";
 
 import Realm from "realm";
 import Schema from "../../../Realm";
@@ -80,8 +80,10 @@ class AddMemoryImage extends Component {
       !this.state.images.length > 0
     ) {
       this.setState({ isLoading: false });
-      return console.log("Missing field");
+      this.refs.toast.show("Album name and image are both required", 2000);
+      return;
     }
+
     if (!this.props.coupleInfo.coupleID) {
       this.setState({ isLoading: false });
       return console.log("coupleID not found");
@@ -110,7 +112,16 @@ class AddMemoryImage extends Component {
     Promise.all(uploadImagePromises)
       .then(response => {
         console.log("res ", response);
+        const checkNulLUrl = false;
         const imageUrls = response.map(item => item.body.postResponse.location);
+        imageUrls.map(url => {
+          if (!url) checkNulLUrl = true;
+        });
+        if (checkNulLUrl) {
+          this.refs.toast.show(
+            "Something wrong with the cloud storage. Please contact to the developer. Sorry about the inconvenient! "
+          );
+        }
         this.uploadMemoryToDataBase(imageUrls);
       })
       .catch(err => {
@@ -238,6 +249,7 @@ class AddMemoryImage extends Component {
         >
           <Button title="Save" onPress={this.handleSaveClick} />
         </View>
+        <Toast ref="toast" position="bottom" />
       </View>
     );
   }

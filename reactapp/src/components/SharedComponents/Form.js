@@ -25,7 +25,7 @@ class Form extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.error !== nextProps.error) {
+    if (nextProps.error && this.state.error !== nextProps.error) {
       this.setState({ error: nextProps.error.msg });
     }
   }
