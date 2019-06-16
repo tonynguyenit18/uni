@@ -145,7 +145,7 @@ router.get("/", authMiddleware, (req, res) => {
             .catch(err => {
               console.log("Find parner err", err);
               res.json({
-                user: responseUser
+                user: user
               });
             });
         } else {

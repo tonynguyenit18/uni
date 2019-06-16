@@ -51,7 +51,6 @@ class AddMemoryImage extends Component {
       includeBase64: true
     })
       .then(images => {
-        console.log(images);
         images = images.map(image => {
           return {
             data: image.data,
@@ -59,9 +58,7 @@ class AddMemoryImage extends Component {
             imageName: image.filename
           };
         });
-        this.setState({ images: [...this.state.images, ...images] }, () =>
-          console.log(this.state)
-        );
+        this.setState({ images: [...this.state.images, ...images] };
       })
       .catch(err => {
         console.log("Image picker err: ", err);
@@ -86,7 +83,7 @@ class AddMemoryImage extends Component {
 
     if (!this.props.coupleInfo.coupleID) {
       this.setState({ isLoading: false });
-      return console.log("coupleID not found");
+      return this.refs.toast.show("CoupleID could not be found", 2000);
     }
 
     const uploadImagePromises = this.state.images.map((image, index) => {
@@ -111,7 +108,6 @@ class AddMemoryImage extends Component {
 
     Promise.all(uploadImagePromises)
       .then(response => {
-        console.log("res ", response);
         const checkNulLUrl = false;
         const imageUrls = response.map(item => item.body.postResponse.location);
         imageUrls.map(url => {

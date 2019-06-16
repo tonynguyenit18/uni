@@ -63,7 +63,6 @@ class NextEvent extends Component {
   );
 
   render() {
-    console.log("next event", this.state);
     return (
       <View style={{ height: "85%" }}>
         {this.state.nextEvents && this.state.nextEvents.length > 0 ? (

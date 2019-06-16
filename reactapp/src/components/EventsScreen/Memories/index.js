@@ -12,19 +12,16 @@ class Memories extends Component {
 
   componentDidMount() {
     const loadingImageIdexArr = this.props.data.memories.map(memory => true);
-    this.setState(
-      { loadingImageIdexArr, memories: this.props.data.memories },
-      () => console.log(loadingImageIdexArr)
-    );
+    this.setState({ loadingImageIdexArr, memories: this.props.data.memories });
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.data.memories.length != this.props.data.memories.length) {
       const loadingImageIdexArr = this.props.data.memories.map(memory => true);
-      this.setState(
-        { loadingImageIdexArr, memories: this.props.data.memories },
-        () => console.log(loadingImageIdexArr)
-      );
+      this.setState({
+        loadingImageIdexArr,
+        memories: this.props.data.memories
+      });
     }
   }
 

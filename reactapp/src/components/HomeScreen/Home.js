@@ -76,7 +76,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    console.log("componentDidMount");
     this.getUserInfo();
   }
 
@@ -178,7 +177,6 @@ class Home extends Component {
   };
 
   handlEventClick = iconName => {
-    console.log("partnner", this.state.partner);
     switch (iconName) {
       case "iconSetting":
         if (this.props.navigation) {
@@ -467,7 +465,6 @@ class Home extends Component {
   };
 
   logout = () => {
-    console.log("logout");
     Realm.open({ schema: Schema })
       .then(realm => {
         realm.write(() => {
@@ -487,7 +484,6 @@ class Home extends Component {
 
   render() {
     const { coupleID } = this.state.user;
-    console.log("coupleID", coupleID);
     return (
       <ImageBackground
         source={
