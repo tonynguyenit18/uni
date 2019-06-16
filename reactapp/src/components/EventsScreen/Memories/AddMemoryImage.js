@@ -58,7 +58,7 @@ class AddMemoryImage extends Component {
             imageName: image.filename
           };
         });
-        this.setState({ images: [...this.state.images, ...images] };
+        this.setState({ images: [...this.state.images, ...images] });
       })
       .catch(err => {
         console.log("Image picker err: ", err);
