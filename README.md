@@ -12,6 +12,7 @@ This is an application which is for couple.
 ## Install
 Clone the project
 go to uni/reactapp/src/config.js to replace Ip and aws key
+go to uni/reactapp/src/helper/socketIO/index.js to change IP as well
 
 From root open 2 terminals
 
@@ -30,6 +31,7 @@ npm install
 react-native run-ios (or npm run start-ios-s my own script to run on iphone 7
 
 ```
+
 It can take awhile for the app run please wait.
 
 When testing with upload image for profile background or memories images, It actually upload to AWS so It can be long loading. Please be patient.
